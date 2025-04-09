@@ -1,6 +1,6 @@
 {
-    "name": "admin_ror",
-    "short_name": "admin_ror",
+    "name": "FeatureRichArchFlutter",
+    "short_name": "FeatureRichArchFlutter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

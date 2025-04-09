@@ -1,5 +1,7 @@
-import 'package:admin_ror/constants/constants.dart';
-import 'package:admin_ror/services/size_utils.dart';
+import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+
+import 'package:FeatureRichArchFlutter/services/size_utils.dart';
+import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +34,8 @@ class CommonBottomSheet extends StatelessWidget {
       ),
       child: Container(
         constraints: BoxConstraints(
-          maxWidth: maxWidth ?? (context.size!.width< 600 ? double.infinity : 400),
+          maxWidth:
+              maxWidth ?? (context.size!.width < 600 ? double.infinity : 400),
         ),
         padding: EdgeInsets.only(bottom: bottomPadding),
         child: Column(
@@ -42,7 +45,9 @@ class CommonBottomSheet extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  padding:  EdgeInsets.symmetric(vertical: CustomPadding.paddingLarge),
+                  padding: EdgeInsets.symmetric(
+                    vertical: CustomPadding.paddingLarge,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(CustomPadding.paddingXL),
@@ -50,7 +55,9 @@ class CommonBottomSheet extends StatelessWidget {
                     gradient: CustomColors.buttonGradient,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: CustomPadding.paddingXXL),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: CustomPadding.paddingXXL,
+                    ),
                     child: AutoSizeText(
                       maxLines: 1,
                       textAlign: TextAlign.center,
@@ -66,7 +73,7 @@ class CommonBottomSheet extends StatelessWidget {
                 ),
                 Positioned(
                   left: 0,
-                  right: custom,
+                  right: CustomPadding.paddingLarge,
                   top: 0,
                   bottom: 0,
                   child: Row(
@@ -75,10 +82,14 @@ class CommonBottomSheet extends StatelessWidget {
                       const Spacer(),
                       popButton ??
                           InkWell(
-                            borderRadius: BorderRadius.circular(CustomPadding.paddingXL),
+                            borderRadius: BorderRadius.circular(
+                              CustomPadding.paddingXL,
+                            ),
                             onTap: () => Navigator.pop(context),
                             child: Container(
-                              padding: EdgeInsets.all(CustomPadding.paddingSmall),
+                              padding: EdgeInsets.all(
+                                CustomPadding.paddingSmall,
+                              ),
                               decoration: const BoxDecoration(
                                 color: Colors.white,
                                 shape: BoxShape.circle,
@@ -94,7 +105,10 @@ class CommonBottomSheet extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(padding: const EdgeInsets.all(CustomPadding.paddingXL), child: child),
+            Padding(
+              padding: const EdgeInsets.all(CustomPadding.paddingXL),
+              child: child,
+            ),
           ],
         ),
       ),
@@ -120,8 +134,8 @@ class ConfirmationSheet extends StatelessWidget {
         children: [
           Text(text),
           // gapLargeCu,
-          CustomGap.gapLarge
-     ,     LoadingButton(
+          CustomGap.gapLarge,
+          LoadingButton(
             buttonLoading: false,
             text: buttonText,
             onPressed: () => Navigator.pop(context, true),

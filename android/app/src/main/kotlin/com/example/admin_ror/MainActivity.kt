@@ -1,4 +1,4 @@
-package com.example.admin_ror
+package com.example.FeatureRichArchFlutter
 
 import io.flutter.embedding.android.FlutterActivity
 
