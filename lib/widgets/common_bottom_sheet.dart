@@ -1,5 +1,8 @@
-import 'package:admin_ror/constants/constants.dart';
+
+import 'package:admin_ror/exporter/exporter.dart';
+
 import 'package:admin_ror/services/size_utils.dart';
+import 'package:admin_ror/widgets/loading_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +69,7 @@ class CommonBottomSheet extends StatelessWidget {
                 ),
                 Positioned(
                   left: 0,
-                  right: custom,
+                  right: CustomPadding.paddingLarge,
                   top: 0,
                   bottom: 0,
                   child: Row(
