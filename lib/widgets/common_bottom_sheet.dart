@@ -1,5 +1,6 @@
 import 'package:admin_ror/constants/constants.dart';
 import 'package:admin_ror/services/size_utils.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class CommonBottomSheet extends StatelessWidget {
@@ -77,7 +78,7 @@ class CommonBottomSheet extends StatelessWidget {
                             borderRadius: BorderRadius.circular(CustomPadding.paddingXL),
                             onTap: () => Navigator.pop(context),
                             child: Container(
-                              padding: const EdgeInsets.all(paddingSmall),
+                              padding: EdgeInsets.all(CustomPadding.paddingSmall),
                               decoration: const BoxDecoration(
                                 color: Colors.white,
                                 shape: BoxShape.circle,
@@ -118,8 +119,9 @@ class ConfirmationSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(text),
-          gapLarge,
-          LoadingButton(
+          // gapLargeCu,
+          CustomGap.gapLarge
+     ,     LoadingButton(
             buttonLoading: false,
             text: buttonText,
             onPressed: () => Navigator.pop(context, true),
