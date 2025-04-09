@@ -1,5 +1,5 @@
-import 'package:admin_ror/constants/constants.dart';
-import 'package:admin_ror/services/size_utils.dart';
+import 'package:FeatureRichArchFlutter/constants/constants.dart';
+import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

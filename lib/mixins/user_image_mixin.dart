@@ -3,11 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 
-import '../../../exporter.dart';
-import '../../../services/file_picker_service.dart';
 
-import '../widgets/upload_image_widget.dart';
-import '../widgets/user_avatar.dart';
+// import '../../../services/file_picker_service.dart';
+
+import '../services/file_picker.dart';
+// import '../widgets/upload_image_widget.dart';
+// import '../widgets/user_avatar.dart';
 
 mixin UserImageMixin<T extends StatefulWidget> on State<T> {
   File? selectedProfileImage;
