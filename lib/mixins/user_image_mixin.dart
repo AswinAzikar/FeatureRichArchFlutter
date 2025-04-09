@@ -6,6 +6,7 @@ import 'package:image_cropper/image_cropper.dart';
 
 // import '../../../services/file_picker_service.dart';
 
+import '../constants/constants.dart';
 import '../services/file_picker.dart';
 import '../services/size_utils.dart';
 import '../widgets/upload_image_widget.dart';
@@ -79,7 +80,7 @@ mixin UserImageMixin<T extends StatefulWidget> on State<T> {
                         shape: BoxShape.circle,
                         color: Colors.white.withValues(alpha: .3),
                       ),
-                      padding: const EdgeInsets.all(paddingLarge),
+                      padding: const EdgeInsets.all(CustomPadding.paddingLarge),
                       child: const Icon(
                         Icons.edit,
                       ),
