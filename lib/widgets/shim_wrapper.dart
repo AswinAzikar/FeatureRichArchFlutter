@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -11,12 +11,12 @@ class Shimwrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
-            color: Colors.grey.withValues(alpha: .1),
-          ),
-          child: Opacity(opacity: 0, child: child),
-        )
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
+        color: Colors.grey.withValues(alpha: .1),
+      ),
+      child: Opacity(opacity: 0, child: child),
+    )
         .animate(onPlay: (controller) => controller.repeat())
         .shimmer(duration: const Duration(seconds: 1), color: color);
   }

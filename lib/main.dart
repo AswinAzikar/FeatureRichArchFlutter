@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/routes/app_routes.dart';
+import '/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-    onGenerateRoute: AppRoutes.onGenerateRoute,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

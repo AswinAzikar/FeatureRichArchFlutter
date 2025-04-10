@@ -1,5 +1,5 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/services/size_utils.dart';
+import '/constants/constants.dart';
+import '/services/size_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -83,10 +83,9 @@ class LoadingButton extends StatelessWidget {
     final borderRadius = BorderRadius.circular(CustomPadding.paddingXL);
 
     Widget content = MouseRegion(
-      cursor:
-          enabled && !buttonLoading
-              ? SystemMouseCursors.click
-              : SystemMouseCursors.basic,
+      cursor: enabled && !buttonLoading
+          ? SystemMouseCursors.click
+          : SystemMouseCursors.basic,
       child: Container(
         decoration: BoxDecoration(
           border: buttonType.border,
@@ -98,40 +97,38 @@ class LoadingButton extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             borderRadius: borderRadius,
-            onTap:
-                buttonLoading || !enabled
-                    ? null
-                    : () {
-                      FocusScope.of(context).unfocus();
-                      HapticFeedback.lightImpact();
-                      onPressed();
-                    },
+            onTap: buttonLoading || !enabled
+                ? null
+                : () {
+                    FocusScope.of(context).unfocus();
+                    HapticFeedback.lightImpact();
+                    onPressed();
+                  },
             child: Padding(
               padding: padding,
               child: Center(
-                child:
-                    buttonLoading
-                        ? SizedBox(
-                          width: 20.h,
-                          height: 20.h,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                        : Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            if (icon != null) ...[icon!, SizedBox(width: 8.h)],
-                            Text(
-                              text,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.labelLarge?.copyWith(
-                                fontSize: 15.fSize,
-                                color: textColor ?? buttonType.textColor,
-                              ),
-                            ),
-                          ],
-                        ),
+                child: buttonLoading
+                    ? SizedBox(
+                        width: 20.h,
+                        height: 20.h,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (icon != null) ...[icon!, SizedBox(width: 8.h)],
+                          Text(
+                            text,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.labelLarge?.copyWith(
+                                  fontSize: 15.fSize,
+                                  color: textColor ?? buttonType.textColor,
+                                ),
+                          ),
+                        ],
+                      ),
               ),
             ),
           ),

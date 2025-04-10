@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -29,44 +29,42 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.red,
       body: NetworkResource(
         future,
-        error:
-            (error) => ErrorWidgetWithRetry(
-              exception: error,
-              retry: () {
-                // setState(() {
-                //   future = null;
-                // });
-                // fetchRegistrationState();
-              },
-            ),
+        error: (error) => ErrorWidgetWithRetry(
+          exception: error,
+          retry: () {
+            // setState(() {
+            //   future = null;
+            // });
+            // fetchRegistrationState();
+          },
+        ),
         success: (data) => const SizedBox(),
         loading: Center(
-          child:
-              Container(
-                    padding: const EdgeInsets.all(CustomPadding.paddingLarge),
-                    width: 140,
-                    height: 140,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Placeholder(),
-                  )
-                  .animate()
-                  .scaleXY(
-                    begin: 1.5,
-                    end: 1,
-                    duration: const Duration(seconds: 1),
-                    curve: Curves.fastOutSlowIn,
-                  )
-                  .then()
-                  .scaleXY(
-                    begin: 1,
-                    end: 10,
-                    duration: const Duration(seconds: 2),
-                    curve: Curves.fastOutSlowIn,
-                  )
-                  .fadeOut(),
+          child: Container(
+            padding: const EdgeInsets.all(CustomPadding.paddingLarge),
+            width: 140,
+            height: 140,
+            decoration: const BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle,
+            ),
+            child: const Placeholder(),
+          )
+              .animate()
+              .scaleXY(
+                begin: 1.5,
+                end: 1,
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn,
+              )
+              .then()
+              .scaleXY(
+                begin: 1,
+                end: 10,
+                duration: const Duration(seconds: 2),
+                curve: Curves.fastOutSlowIn,
+              )
+              .fadeOut(),
         ),
       ),
     );

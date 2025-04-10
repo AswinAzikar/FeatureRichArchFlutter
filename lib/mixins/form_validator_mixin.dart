@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:FeatureRichArchFlutter/widgets/common_bottom_sheet.dart';
-import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
+import '/widgets/common_bottom_sheet.dart';
+import '/widgets/loading_button.dart';
 import 'package:flutter/material.dart';
 
 // For `navigatorKey`
