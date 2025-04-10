@@ -18,7 +18,7 @@ cd $project_name
 git clone https://github.com/AswinAzikar/FeatureRichArchFlutter.git
 
 # Copy files from the starter repository
-cp -r starter/lib .
+cp -r  FeatureRichArchFlutter/lib .
 #cp -r starter/assets .
 
 # Remove starter.sh from the project folder 
