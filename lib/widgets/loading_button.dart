@@ -3,7 +3,7 @@ import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '/constants/constants.dart'; // Adjust this as per your project structure
+// Adjust this as per your project structure
 
 enum ButtonType {
   outlined,

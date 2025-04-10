@@ -1,6 +1,5 @@
 import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
 
-import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
