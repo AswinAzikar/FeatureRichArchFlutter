@@ -4,6 +4,7 @@ import '../data/post_service.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String path = "/home-screen";
   const HomeScreen({super.key});
 
   @override
