@@ -1,3 +1,5 @@
+import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
+
 import '/core/api/dio_helper.dart';
 import '/features/home_screen/view/home_screen.dart';
 import '/services/shared_pref_services.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       // onGenerateRoute: AppRoutes.onGenerateRoute,
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
