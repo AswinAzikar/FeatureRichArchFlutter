@@ -1,6 +1,9 @@
+import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
+import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
+
 import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+// import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../widgets/error_widget_with_retry.dart';
 import '../../widgets/network_resources.dart';
@@ -14,13 +17,32 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
   Future<void>? future;
+  late AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-    // fetchRegistrationState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    _controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Navigator.of(context).pushReplacementNamed(LandingPage.path);
+      }
+    });
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -31,73 +53,46 @@ class _SplashScreenState extends State<SplashScreen> {
         future,
         error: (error) => ErrorWidgetWithRetry(
           exception: error,
-          retry: () {
-            // setState(() {
-            //   future = null;
-            // });
-            // fetchRegistrationState();
-          },
+          retry: () {},
         ),
         success: (data) => const SizedBox(),
         loading: Center(
-          child: Container(
-            padding: const EdgeInsets.all(CustomPadding.paddingLarge),
-            width: 140,
-            height: 140,
-            decoration: const BoxDecoration(
-              color: Colors.black,
-              shape: BoxShape.circle,
-            ),
-            child: const Placeholder(),
-          )
-              .animate()
-              .scaleXY(
-                begin: 1.5,
-                end: 1,
-                duration: const Duration(seconds: 1),
-                curve: Curves.fastOutSlowIn,
-              )
-              .then()
-              .scaleXY(
-                begin: 1,
-                end: 10,
-                duration: const Duration(seconds: 2),
-                curve: Curves.fastOutSlowIn,
-              )
-              .fadeOut(),
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              double scale;
+              double opacity = 1.0;
+              if (_controller.value < 1 / 3) {
+                scale = 1.5 - (_controller.value * 1.5);
+                opacity = 1.0;
+              } else {
+                double t =
+                    ((_controller.value - 1 / 3) / (2 / 3)).clamp(0.0, 1.0);
+                scale = 1 + 9 * t;
+                opacity = (1 - t).clamp(0.0, 1.0);
+              }
+
+              opacity = opacity.clamp(0.0, 1.0);
+              return Opacity(
+                opacity: opacity,
+                child: Transform.scale(
+                  scale: scale,
+                  child: Container(
+                    padding: const EdgeInsets.all(CustomPadding.paddingLarge),
+                    width: 140,
+                    height: 140,
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Placeholder(),
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
   }
-
-//   void fetchRegistrationState() async {
-//     setState(() {
-//       future = Future.wait([
-//         // DataRepository.i.fetchRegistrationState(),
-//         Future.delayed(const Duration(seconds: 3)),
-//       ]).then((value) {
-//         // throw DioException(requestOptions: RequestOptions());
-//         RegistrationState state = RegistrationState.completed;
-//         // RegistrationState.fromString(value.first.data["state"]);
-//         switch (state) {
-//           case RegistrationState.basicDetails:
-//           // Navigator.pushNamedAndRemoveUntil(
-//           //     context, BasicDetailsForm.path, (route) => false);
-//           // break;
-//           case RegistrationState.programSelection:
-//           // Navigator.pushNamedAndRemoveUntil(
-//           //     context, ProgramSelectionForm.path, (route) => false);
-//           // break;
-//           case RegistrationState.completed:
-//             Navigator.pushNamedAndRemoveUntil(
-//               context,
-//               NavigationScreen.path,
-//               (route) => false,
-//             );
-//             break;
-//         }
-//       });
-//     });
-//   }
-// }
 }

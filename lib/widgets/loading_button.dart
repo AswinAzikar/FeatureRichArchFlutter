@@ -1,9 +1,7 @@
 import '/constants/constants.dart';
 import '/services/size_utils.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// Adjust this as per your project structure
 
 enum ButtonType {
   outlined,
@@ -18,9 +16,7 @@ enum ButtonType {
     }
   }
 
-  LinearGradient get gradient {
-    return CustomColors.buttonGradient;
-  }
+  LinearGradient get gradient => CustomColors.buttonGradient;
 
   Color? get color {
     switch (this) {
@@ -31,7 +27,7 @@ enum ButtonType {
     }
   }
 
-  Color? get textColor {
+  Color get textColor {
     switch (this) {
       case ButtonType.outlined:
         return const Color(0xff000000);
@@ -49,12 +45,13 @@ class LoadingButton extends StatelessWidget {
     required this.onPressed,
     this.enabled = true,
     this.expanded = true,
-    this.textColor = Colors.white,
+    this.textColor,
     this.backgroundColor,
     this.buttonType = ButtonType.filled,
     this.icon,
     this.aspectRatio = 60 / 47,
-    this.padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+    this.height = 56,
+    this.maxWidth = 300,
   });
 
   final bool buttonLoading;
@@ -62,31 +59,26 @@ class LoadingButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool enabled;
   final bool expanded;
-  final Color textColor;
+  final Color? textColor;
   final Color? backgroundColor;
   final ButtonType buttonType;
   final Widget? icon;
   final double aspectRatio;
-  final EdgeInsetsGeometry padding;
-
-  bool get _isWebOrDesktop {
-    return [
-          TargetPlatform.windows,
-          TargetPlatform.linux,
-          TargetPlatform.macOS,
-        ].contains(defaultTargetPlatform) ||
-        kIsWeb;
-  }
+  final double height;
+  final double maxWidth;
 
   @override
   Widget build(BuildContext context) {
     final borderRadius = BorderRadius.circular(CustomPadding.paddingXL);
+    final effectiveTextColor = textColor ?? buttonType.textColor;
 
-    Widget content = MouseRegion(
+    final Widget content = MouseRegion(
       cursor: enabled && !buttonLoading
           ? SystemMouseCursors.click
           : SystemMouseCursors.basic,
       child: Container(
+        height: height,
+        constraints: BoxConstraints(maxWidth: maxWidth),
         decoration: BoxDecoration(
           border: buttonType.border,
           gradient: backgroundColor != null ? null : buttonType.gradient,
@@ -104,43 +96,41 @@ class LoadingButton extends StatelessWidget {
                     HapticFeedback.lightImpact();
                     onPressed();
                   },
-            child: Padding(
-              padding: padding,
-              child: Center(
-                child: buttonLoading
-                    ? SizedBox(
-                        width: 20.h,
-                        height: 20.h,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          if (icon != null) ...[icon!, SizedBox(width: 8.h)],
-                          Text(
-                            text,
-                            style: Theme.of(
-                              context,
-                            ).textTheme.labelLarge?.copyWith(
-                                  fontSize: 15.fSize,
-                                  color: textColor ?? buttonType.textColor,
-                                ),
-                          ),
-                        ],
-                      ),
-              ),
+            child: Center(
+              child: buttonLoading
+                  ? SizedBox(
+                      width: 20.h,
+                      height: 20.v,
+                      child: const CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (icon != null) ...[icon!, SizedBox(width: 8.h)],
+                        Text(
+                          text,
+                          style:
+                              Theme.of(context).textTheme.labelLarge?.copyWith(
+                                    fontSize: 15.fSize,
+                                    color: effectiveTextColor,
+                                  ),
+                        ),
+                      ],
+                    ),
             ),
           ),
         ),
       ),
     );
 
-    Widget button = ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 48, maxWidth: 300),
-      child: content,
-    );
-
-    return expanded ? Row(children: [Expanded(child: button)]) : button;
+    return expanded
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(fit: FlexFit.loose, child: content),
+            ],
+          )
+        : content;
   }
 }

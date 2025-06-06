@@ -1,9 +1,10 @@
 import '/core/api/dio_helper.dart';
-import '/features/homescreen/data/coffee_service.dart';
-import '/features/homescreen/data/post_service.dart';
+import '../data/coffee_service.dart';
+import '../data/post_service.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String path = "/home-screen";
   const HomeScreen({super.key});
 
   @override
@@ -25,13 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     } catch (e) {
       throw DioHelper().handleError(e);
-      // throw Exception(e);
     }
   }
 
   Future<void> getCoffee() async {
     try {
-      final response = await CoffeeService.getCofee();
+      final response = await CoffeeService.getCoffee();
       setState(() {
         coffeeList = response;
         isLoading = false;
