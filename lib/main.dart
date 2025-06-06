@@ -1,4 +1,6 @@
+import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
 import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
+import 'package:FeatureRichArchFlutter/routes/app_routes.dart';
 
 import '/core/api/dio_helper.dart';
 import '/features/home_screen/view/home_screen.dart';
@@ -7,12 +9,10 @@ import '/services/shared_pref_services.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-
-  //TODO : Add this to the template
   WidgetsFlutterBinding.ensureInitialized();
   await DioHelper().init();
   await SharedPreferencesService.i.initialize();
-  // upto this line
+
   runApp(const MyApp());
 }
 
@@ -23,13 +23,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return Sizer(
+      builder: (context, orientation, deviceType) => MaterialApp(
+        navigatorKey: navigatorKey,
+        initialRoute: SplashScreen.path,
+        onGenerateRoute: AppRoutes.onGenerateRoute,
+        onGenerateInitialRoutes: AppRoutes.onGenerateInitialRoute,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
       ),
-      // onGenerateRoute: AppRoutes.onGenerateRoute,
-      home: SplashScreen(),
     );
   }
 }

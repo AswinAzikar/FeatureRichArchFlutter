@@ -49,8 +49,9 @@ class LoadingButton extends StatelessWidget {
     this.backgroundColor,
     this.buttonType = ButtonType.filled,
     this.icon,
-    this.aspectRatio = 60 / 47, // declared but not used
-    this.padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+    this.aspectRatio = 60 / 47,
+    this.height = 56,
+    this.maxWidth = 300,
   });
 
   final bool buttonLoading;
@@ -63,15 +64,8 @@ class LoadingButton extends StatelessWidget {
   final ButtonType buttonType;
   final Widget? icon;
   final double aspectRatio;
-  final EdgeInsetsGeometry padding;
-
-  // bool get _isWebOrDesktop =>
-  //     kIsWeb ||
-  //     {
-  //       TargetPlatform.windows,
-  //       TargetPlatform.linux,
-  //       TargetPlatform.macOS,
-  //     }.contains(defaultTargetPlatform);
+  final double height;
+  final double maxWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +77,8 @@ class LoadingButton extends StatelessWidget {
           ? SystemMouseCursors.click
           : SystemMouseCursors.basic,
       child: Container(
+        height: height,
+        constraints: BoxConstraints(maxWidth: maxWidth),
         decoration: BoxDecoration(
           border: buttonType.border,
           gradient: backgroundColor != null ? null : buttonType.gradient,
@@ -100,44 +96,41 @@ class LoadingButton extends StatelessWidget {
                     HapticFeedback.lightImpact();
                     onPressed();
                   },
-            child: Padding(
-              padding: padding,
-              child: Center(
-                child: buttonLoading
-                    ? SizedBox(
-                        width: 20.h,
-                        height: 20.h,
-                        child: const CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          if (icon != null) ...[icon!, SizedBox(width: 8.h)],
-                          Text(
-                            text,
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge
-                                ?.copyWith(
-                                  fontSize: 15.fSize,
-                                  color: effectiveTextColor,
-                                ),
-                          ),
-                        ],
-                      ),
-              ),
+            child: Center(
+              child: buttonLoading
+                  ? SizedBox(
+                      width: 20.h,
+                      height: 20.v,
+                      child: const CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (icon != null) ...[icon!, SizedBox(width: 8.h)],
+                        Text(
+                          text,
+                          style:
+                              Theme.of(context).textTheme.labelLarge?.copyWith(
+                                    fontSize: 15.fSize,
+                                    color: effectiveTextColor,
+                                  ),
+                        ),
+                      ],
+                    ),
             ),
           ),
         ),
       ),
     );
 
-    final Widget button = ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 48, maxWidth: 300),
-      child: content,
-    );
-
-    return expanded ? Row(children: [Expanded(child: button)]) : button;
+    return expanded
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(fit: FlexFit.loose, child: content),
+            ],
+          )
+        : content;
   }
 }

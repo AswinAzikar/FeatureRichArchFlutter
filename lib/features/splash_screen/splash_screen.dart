@@ -1,8 +1,9 @@
 import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
+import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
 
 import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+// import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../widgets/error_widget_with_retry.dart';
 import '../../widgets/network_resources.dart';
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacementNamed(HomeScreen.path);
+        Navigator.of(context).pushReplacementNamed(LandingPage.path);
       }
     });
 
@@ -63,11 +64,15 @@ class _SplashScreenState extends State<SplashScreen>
               double opacity = 1.0;
               if (_controller.value < 1 / 3) {
                 scale = 1.5 - (_controller.value * 1.5);
+                opacity = 1.0;
               } else {
-                double t = (_controller.value - 1 / 3) / (2 / 3);
+                double t =
+                    ((_controller.value - 1 / 3) / (2 / 3)).clamp(0.0, 1.0);
                 scale = 1 + 9 * t;
-                opacity = 1 - t;
+                opacity = (1 - t).clamp(0.0, 1.0);
               }
+
+              opacity = opacity.clamp(0.0, 1.0);
               return Opacity(
                 opacity: opacity,
                 child: Transform.scale(

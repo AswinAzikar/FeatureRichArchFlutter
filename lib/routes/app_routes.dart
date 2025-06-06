@@ -1,5 +1,7 @@
 import 'package:FeatureRichArchFlutter/core/logger.dart';
+import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
 import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
+import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -9,10 +11,21 @@ class AppRoutes {
     logInfo(uri);
 
     switch (uri.path) {
+      case SplashScreen.path:
+        return pageRoute(
+          settings,
+          const SplashScreen(),
+        );
+
       case LandingPage.path:
         return pageRoute(
           settings,
           const LandingPage(),
+        );
+      case HomeScreen.path:
+        return pageRoute(
+          settings,
+          const HomeScreen(),
         );
       default:
         return null;
@@ -27,7 +40,7 @@ class AppRoutes {
     return [
       pageRoute(
         const RouteSettings(name: LandingPage.path),
-        const LandingPage(),
+        const SplashScreen(),
       ),
     ];
   }
