@@ -38,7 +38,10 @@ enum ButtonType {
 }
 
 class LoadingButton extends StatelessWidget {
-  const LoadingButton({
+  const 
+  
+  
+  LoadingButton({
     super.key,
     required this.buttonLoading,
     required this.text,
