@@ -4,6 +4,7 @@ import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dar
 import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
 import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class AppRoutes {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -23,9 +24,17 @@ class AppRoutes {
           settings,
           const LandingPage(),
         );
+
       case AuthPage.path:
-        return pageRoute(settings, const AuthPage());
-         
+        return PageTransition(
+          type: PageTransitionType.rightToLeftWithFade,
+          child: AuthPage(),
+          duration: const Duration(milliseconds: 500),
+        );
+
+      // case AuthPage.path:
+      //   return pageRoute(settings, const AuthPage());
+
       case HomeScreen.path:
         return pageRoute(
           settings,
