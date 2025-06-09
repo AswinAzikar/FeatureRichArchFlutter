@@ -32,6 +32,7 @@ class CustomColors {
 // static const backgroundColor = Color.fromARGB(255, 255, 255, 255);
 
   static const Color backgroundColor = Color(0xFFF5F5F5);
+  static const scaffoldRed = Colors.red;
   static const textColor = Color.fromARGB(255, 0, 0, 0);
   static const textColorLight = Color.fromARGB(255, 255, 255, 255);
   static const textColorDark = Color.fromARGB(255, 0, 0, 0);

@@ -12,11 +12,17 @@ import 'package:flutter/widgets.dart';
 class $AssetsLottiesGen {
   const $AssetsLottiesGen();
 
+  /// File path: assets/lotties/auth_lottie.json
+  String get authLottie => 'assets/lotties/auth_lottie.json';
+
+  /// File path: assets/lotties/auth_lottie_2.json
+  String get authLottie2 => 'assets/lotties/auth_lottie_2.json';
+
   /// File path: assets/lotties/girl_in_a_bike.json
   String get girlInABike => 'assets/lotties/girl_in_a_bike.json';
 
   /// List of all assets
-  List<String> get values => [girlInABike];
+  List<String> get values => [authLottie, authLottie2, girlInABike];
 }
 
 class $AssetsPngGen {
@@ -25,8 +31,15 @@ class $AssetsPngGen {
   /// File path: assets/png/authbg.jpg
   AssetGenImage get authbg => const AssetGenImage('assets/png/authbg.jpg');
 
+  /// File path: assets/png/background.jpeg
+  AssetGenImage get background =>
+      const AssetGenImage('assets/png/background.jpeg');
+
+  /// File path: assets/png/bg.jpeg
+  AssetGenImage get bg => const AssetGenImage('assets/png/bg.jpeg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [authbg];
+  List<AssetGenImage> get values => [authbg, background, bg];
 }
 
 class $AssetsSvgGen {

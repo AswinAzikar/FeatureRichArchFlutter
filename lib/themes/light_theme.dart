@@ -1,17 +1,27 @@
 import 'package:FeatureRichArchFlutter/constants/constants.dart';
 import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 ThemeData lightTheme = ThemeData(
+  appBarTheme: AppBarTheme(
+    systemOverlayStyle:
+        SystemUiOverlayStyle(statusBarColor: CustomColors.backgroundColor),
+    backgroundColor: CustomColors.backgroundColor,
+    foregroundColor: CustomColors.textColorDark,
+    elevation: 0,
+    titleTextStyle: TextStyle(
+      color: CustomColors.textColorDark,
+      fontSize: 18.v,
+      fontWeight: FontWeight.w500,
+    ),
+  ),
   useMaterial3: true, scaffoldBackgroundColor: CustomColors.backgroundColor,
 
   inputDecorationTheme: InputDecorationTheme(
     // border: InputBorder.none,
 
     hintStyle: TextStyle(
-
-
-
       color: CustomColors.textColorGrey,
       fontWeight: FontWeight.w500,
     ),
@@ -23,8 +33,6 @@ ThemeData lightTheme = ThemeData(
     // filled: true,
     // fillColor: CustomColors.textfieldphoneColors,
     border: OutlineInputBorder(
-
-
       borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
       borderSide: BorderSide(
         color: Colors.transparent,

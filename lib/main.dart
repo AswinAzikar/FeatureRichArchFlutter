@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) => MaterialApp(
+        debugShowCheckedModeBanner: true,
         navigatorKey: navigatorKey,
         initialRoute: SplashScreen.path,
         onGenerateRoute: AppRoutes.onGenerateRoute,
