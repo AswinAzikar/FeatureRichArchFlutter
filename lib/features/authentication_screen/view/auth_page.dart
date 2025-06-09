@@ -162,7 +162,9 @@ class AuthPage extends StatelessWidget {
               onPressed: () {},
             ),
             Gap(CustomPadding.paddingLarge),
-            Divider(),
+            Divider(
+              endIndent: 10.v,
+            ),
             Row(
               children: [SvgPicture.asset(Assets.svg.google)],
             )
