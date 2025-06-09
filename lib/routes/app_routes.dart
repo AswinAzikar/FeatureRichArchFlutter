@@ -1,4 +1,5 @@
 import 'package:FeatureRichArchFlutter/core/logger.dart';
+import 'package:FeatureRichArchFlutter/features/authentication_screen/view/auth_page.dart';
 import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
 import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
 import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
@@ -22,6 +23,9 @@ class AppRoutes {
           settings,
           const LandingPage(),
         );
+      case AuthPage.path:
+        return pageRoute(settings, const AuthPage());
+         
       case HomeScreen.path:
         return pageRoute(
           settings,
