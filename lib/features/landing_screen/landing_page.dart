@@ -1,4 +1,5 @@
 import 'package:FeatureRichArchFlutter/constants/constants.dart';
+import 'package:FeatureRichArchFlutter/features/authentication_screen/view/auth_page.dart';
 import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
 import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
 import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
@@ -47,7 +48,7 @@ class LandingPage extends StatelessWidget {
               buttonLoading: false,
               text: 'lets go !',
               onPressed: () {
-                Navigator.of(context).pushNamed(HomeScreen.path);
+                Navigator.of(context).pushNamed(AuthPage.path);
               }),
         ),
       ),
