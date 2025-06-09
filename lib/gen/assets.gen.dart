@@ -32,11 +32,20 @@ class $AssetsPngGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/facebook.svg
+  String get facebook => 'assets/svg/facebook.svg';
+
+  /// File path: assets/svg/gmail.svg
+  String get gmail => 'assets/svg/gmail.svg';
+
+  /// File path: assets/svg/google.svg
+  String get google => 'assets/svg/google.svg';
+
   /// File path: assets/svg/rocket.svg
   String get rocket => 'assets/svg/rocket.svg';
 
   /// List of all assets
-  List<String> get values => [rocket];
+  List<String> get values => [facebook, gmail, google, rocket];
 }
 
 class Assets {

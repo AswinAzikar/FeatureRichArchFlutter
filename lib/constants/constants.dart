@@ -40,6 +40,7 @@ class CustomColors {
   static const textColorDarkGrey = Color.fromARGB(255, 50, 50, 50);
   static const Color buttonColor1 = Colors.blue;
   static const Color buttonColor2 = Colors.lightGreen;
+  static const Color textfieldphoneColors = Color(0xffF0F8FF);
   static const LinearGradient buttonGradient = LinearGradient(
     colors: [buttonColor1, buttonColor2],
   );
