@@ -28,9 +28,10 @@ class AppRoutes {
 
       case AuthPage.path:
         return PageTransition(
-          type: PageTransitionType.rightToLeftWithFade,
+          childCurrent: const LandingPage(),
+          type: PageTransitionType.leftToRightJoined,
           child: AuthPage(),
-          duration: const Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 400),
         );
 
       // case AuthPage.path:
