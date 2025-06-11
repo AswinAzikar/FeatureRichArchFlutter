@@ -1,15 +1,15 @@
 import 'package:FeatureRichArchFlutter/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-class NavigationPage extends StatefulWidget {
-  const NavigationPage({super.key});
-  static const String path = '/navigation';
+class NavigationScreen extends StatefulWidget {
+  const NavigationScreen({super.key});
+  static const String path = '/navigation_screen';
 
   @override
-  State<NavigationPage> createState() => _NavigationPageState();
+  State<NavigationScreen> createState() => _NavigationScreenState();
 }
 
-class _NavigationPageState extends State<NavigationPage> {
+class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
 
   @override

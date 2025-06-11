@@ -10,7 +10,7 @@ import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
 
 import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_page.dart';
+import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_screen.dart';
 import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
 import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
@@ -237,7 +237,7 @@ class _AuthPageState extends State<AuthPage> {
           onPressed: () {
             saveToken();
 
-            Navigator.pushNamed(context, NavigationPage.path);
+            Navigator.pushNamed(context, NavigationScreen.path);
           },
         ),
       ],

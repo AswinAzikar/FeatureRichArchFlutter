@@ -2,7 +2,7 @@ import 'package:FeatureRichArchFlutter/core/logger.dart';
 import 'package:FeatureRichArchFlutter/features/authentication_screen/view/auth_page.dart';
 import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
 import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
-import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_page.dart';
+import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_screen.dart';
 import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -34,11 +34,11 @@ class AppRoutes {
           child: AuthPage(),
           duration: const Duration(milliseconds: 400),
         );
-      case NavigationPage.path:
+      case NavigationScreen.path:
         return PageTransition(
             duration: const Duration(milliseconds: 800),
             type: PageTransitionType.rightToLeftWithFade,
-            child: const NavigationPage(),
+            child: const NavigationScreen(),
             settings: settings);
       // case AuthPage.path:
       //   return pageRoute(settings, const AuthPage());
