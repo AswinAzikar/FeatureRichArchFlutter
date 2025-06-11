@@ -1,6 +1,8 @@
 import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
 import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
+import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_page.dart';
 
+import '../../services/shared_pref_services.dart';
 import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_animate/flutter_animate.dart';
@@ -32,7 +34,12 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacementNamed(LandingPage.path);
+        final token = SharedPreferencesService.i.token;
+        if (token.isNotEmpty) {
+          Navigator.of(context).pushReplacementNamed(NavigationPage.path);
+        } else {
+          Navigator.of(context).pushReplacementNamed(LandingPage.path);
+        }
       }
     });
 

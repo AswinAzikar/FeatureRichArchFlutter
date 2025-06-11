@@ -15,6 +15,7 @@ import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
 import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
 
+import '../../../services/shared_pref_services.dart';
 import '../../../widgets/social_media_auth_button.dart';
 
 class AuthPage extends StatefulWidget {
@@ -102,6 +103,13 @@ class _AuthPageState extends State<AuthPage> {
                 ? buildOtpInput(key: ValueKey('otp'))
                 : buildPhoneNumberInput(key: ValueKey('phone'))),
       ),
+    );
+  }
+
+  Future<void> saveToken() async {
+    await SharedPreferencesService.i.setValue(
+      key: 'token',
+      value: 'sampleValue',
     );
   }
 
@@ -205,7 +213,8 @@ class _AuthPageState extends State<AuthPage> {
       key: key,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Gap(CustomPadding.paddingXL),
+        CustomGap.gapXL,
+        // Gap(CustomPadding.paddingXL),
         Text(
           "Enter OTP",
           style: TextStyle(
@@ -213,17 +222,21 @@ class _AuthPageState extends State<AuthPage> {
             fontWeight: FontWeight.w500,
           ),
         ),
-        Gap(CustomPadding.padding),
+        // Gap(CustomPadding.paddingXL),
+        CustomGap.gapXL,
         Pinput(
           length: 6,
           closeKeyboardWhenCompleted: true,
         ),
-        Gap(CustomPadding.paddingLarge),
+        // Gap(CustomPadding.paddingXL),
+        CustomGap.gapXL,
         LoadingButton(
           maxWidth: double.maxFinite,
           buttonLoading: false,
           text: 'Verify OTP',
           onPressed: () {
+            saveToken();
+
             Navigator.pushNamed(context, NavigationPage.path);
           },
         ),
