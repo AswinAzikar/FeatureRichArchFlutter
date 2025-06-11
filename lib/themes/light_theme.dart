@@ -7,11 +7,7 @@ import 'package:flutter/services.dart';
 // import '../constants/constants.dart';
 
 ThemeData lightTheme = ThemeData(
-
   navigationBarTheme: NavigationBarThemeData(
-
-
-
       height: kBottomNavigationBarHeight.v,
       backgroundColor: CustomColors.backgroundColor,
       indicatorColor: CustomColors.primaryColor,

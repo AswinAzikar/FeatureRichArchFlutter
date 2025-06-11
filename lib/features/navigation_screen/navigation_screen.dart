@@ -1,4 +1,5 @@
 import 'package:FeatureRichArchFlutter/constants/constants.dart';
+import 'package:FeatureRichArchFlutter/main.dart';
 import 'package:FeatureRichArchFlutter/services/show_exit_confirmation_dialogue.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +15,13 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
   bool _canPop = false;
 
-  final List<Widget> _pages = const [
-    Center(child: Text('Home Page')),
+  final List<Widget> _pages = [
+    Center(
+        child: ElevatedButton(
+            onPressed: () {
+              MyApp.toggleTheme();
+            },
+            child: Text('toggle Theme'))),
     Center(child: Text('Search Page')),
     Center(child: Text('Add Page')),
     Center(child: Text('Notifications Page')),
