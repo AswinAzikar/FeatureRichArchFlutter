@@ -25,9 +25,9 @@ class CustomDuration {
 }
 
 class CustomColors {
-  static const primaryColor = Colors.black;
+  static const primaryColor = Color(0xFF3AB54A);
 
-  static const secondaryColor = Colors.white;
+  static const secondaryColor = Color(0xFFFEE440);
   static const tertiaryColor = Color.fromARGB(255, 240, 240, 240);
 // static const backgroundColor = Color.fromARGB(255, 255, 255, 255);
 
@@ -47,11 +47,7 @@ class CustomColors {
   );
 
   static const LinearGradient fruitlyGradient = LinearGradient(
-    colors: [
-      Color(0xFFFEE440), // Lemon yellow
-      
-      Color(0xFF3AB54A), // Fresh green
-    ],
+    colors: [secondaryColor, primaryColor],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

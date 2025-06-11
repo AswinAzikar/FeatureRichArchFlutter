@@ -7,11 +7,29 @@ import 'package:flutter/services.dart';
 // import '../constants/constants.dart';
 
 ThemeData lightTheme = ThemeData(
+  navigationBarTheme: NavigationBarThemeData(
 
 
+
+      height: kBottomNavigationBarHeight.v,
+      backgroundColor: CustomColors.backgroundColor,
+      indicatorColor: CustomColors.primaryColor,
+      labelTextStyle: WidgetStatePropertyAll(
+        TextStyle(
+          color: CustomColors.textColorDark,
+          fontSize: 14.fSize,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      iconTheme: WidgetStatePropertyAll(
+        IconThemeData(
+          color: CustomColors.primaryColor,
+          size: 24.v,
+        ),
+      )),
 
   dividerTheme: DividerThemeData(
-      thickness: 0.7,
+    thickness: 0.7,
     color: CustomColors.textColorLightGrey.withValues(alpha: 0.3),
     endIndent: 40.v,
     indent: 40.v,

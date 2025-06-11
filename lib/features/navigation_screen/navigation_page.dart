@@ -17,12 +17,14 @@ class _NavigationPageState extends State<NavigationPage> {
     return Scaffold(
       body: Center(child: Text("Page ${_selectedIndex + 1}")),
       bottomNavigationBar: BottomNavigationBar(
+        enableFeedback: false,
+        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: (index) => setState(() => _selectedIndex = index),
 
         // Colors
-        selectedItemColor: CustomColors.scaffoldRed,
-        unselectedItemColor: Colors.black87,
+        selectedItemColor: CustomColors.primaryColor,
+        // unselectedItemColor: Colors.black87,
         selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
         unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
 
