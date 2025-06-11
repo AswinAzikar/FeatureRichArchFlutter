@@ -8,6 +8,8 @@ import '/services/shared_pref_services.dart';
 
 import 'package:flutter/material.dart';
 
+import 'themes/light_theme.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DioHelper().init();
@@ -25,16 +27,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) => MaterialApp(
-        debugShowCheckedModeBanner: true,
-        navigatorKey: navigatorKey,
-        initialRoute: SplashScreen.path,
-        onGenerateRoute: AppRoutes.onGenerateRoute,
-        onGenerateInitialRoutes: AppRoutes.onGenerateInitialRoute,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
-      ),
+          debugShowCheckedModeBanner: true,
+          navigatorKey: navigatorKey,
+          initialRoute: SplashScreen.path,
+          onGenerateRoute: AppRoutes.onGenerateRoute,
+          onGenerateInitialRoutes: AppRoutes.onGenerateInitialRoute,
+          title: 'Flutter Demo',
+          theme: lightTheme,),
     );
   }
 }

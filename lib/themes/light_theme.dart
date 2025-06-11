@@ -1,9 +1,21 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+// import 'package:FeatureRichArchFlutter/constants/constants.dart';
+// import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+import '../exporter/exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// import '../constants/constants.dart';
+
 ThemeData lightTheme = ThemeData(
+
+
+
+  dividerTheme: DividerThemeData(
+      thickness: 0.7,
+    color: CustomColors.textColorLightGrey.withValues(alpha: 0.3),
+    endIndent: 40.v,
+    indent: 40.v,
+  ),
   appBarTheme: AppBarTheme(
     systemOverlayStyle:
         SystemUiOverlayStyle(statusBarColor: CustomColors.backgroundColor),

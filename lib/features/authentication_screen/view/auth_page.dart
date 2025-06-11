@@ -1,8 +1,5 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_page.dart';
-import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
-import 'package:FeatureRichArchFlutter/services/size_utils.dart';
-import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -11,6 +8,14 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
+
+import 'package:FeatureRichArchFlutter/constants/constants.dart';
+import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_page.dart';
+import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
+import 'package:FeatureRichArchFlutter/services/size_utils.dart';
+import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
+
+import '../../../widgets/social_media_auth_button.dart';
 
 class AuthPage extends StatefulWidget {
   static const String path = '/authpage';
@@ -159,40 +164,18 @@ class _AuthPageState extends State<AuthPage> {
         ),
         Gap(CustomPadding.paddingLarge),
         Divider(
-          thickness: 0.7,
-          color: CustomColors.textColorLightGrey,
-          endIndent: 40.v,
-          indent: 40.v,
+       
         ),
         Gap(CustomPadding.padding),
         Row(
           spacing: CustomPadding.paddingLarge,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
-                onTap: () {},
-                child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border:
-                            Border.all(color: CustomColors.textColorLightGrey)),
-                    child: SvgPicture.asset(Assets.svg.google))),
-            GestureDetector(
-                onTap: () {},
-                child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border:
-                            Border.all(color: CustomColors.textColorLightGrey)),
-                    child: SvgPicture.asset(Assets.svg.facebook))),
-            GestureDetector(
-                onTap: () {},
-                child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border:
-                            Border.all(color: CustomColors.textColorLightGrey)),
-                    child: SvgPicture.asset(Assets.svg.gmail))),
+            SocialMediaAuthButton(
+              assetPath: Assets.svg.google,
+            ),
+            SocialMediaAuthButton(assetPath: Assets.svg.facebook),
+            SocialMediaAuthButton(assetPath: Assets.svg.gmail)
           ],
         )
       ],
@@ -223,6 +206,7 @@ class _AuthPageState extends State<AuthPage> {
           buttonLoading: false,
           text: 'Verify OTP',
           onPressed: () {
+            //TODO : implement otp Validation logic
             Navigator.pushNamed(context, NavigationPage.path);
           },
         ),
