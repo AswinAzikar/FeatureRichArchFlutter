@@ -45,6 +45,57 @@ class CustomColors {
   static const LinearGradient buttonGradient = LinearGradient(
     colors: [buttonColor1, buttonColor2],
   );
+
+  static const LinearGradient fruitlyGradient = LinearGradient(
+    colors: [
+      Color(0xFFFEE440), // Lemon yellow
+      
+      Color(0xFF3AB54A), // Fresh green
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient orangeGradient = LinearGradient(
+    colors: [
+      Color(0xFFDA7A1F), // brighter amber tone
+      Color(0xFFAC580F), // original
+      Color(0xFF7A3F0A), // darker, richer end
+    ],
+    stops: [0.0, 0.5, 1.0],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient greenGradient = LinearGradient(
+    colors: [
+      Color(0xFF66C870), // lighter tone
+      Color(0xFF3AB54A), // base green
+      Color(0xFF2A8F36), // deeper tone
+    ],
+    stops: [0.0, 0.5, 1.0],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient newbuttonGradient = LinearGradient(
+    colors: [
+      Color(0xFF3AB54A),
+      Color(0xFFF1C14F),
+      Color(0xFFAC580F),
+    ],
+    stops: [0.0, 0.5, 1.0],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    // colors: [
+    //   Color(0xFF3AB54A), // Your bright green
+    //   Color(0xFF819E1B), // Muted chartreuse (midpoint)
+    //   Color(0xFFAC580F), // Your deep orange-brown
+    // ],
+    // stops: [0.0, 0.5, 1.0],
+    // begin: Alignment.topLeft,
+    // end: Alignment.bottomRight,
+  );
 }
 
 const loremIpsum =

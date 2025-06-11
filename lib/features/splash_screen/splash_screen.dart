@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      // backgroundColor: Colors.red,
       body: NetworkResource(
         future,
         error: (error) => ErrorWidgetWithRetry(

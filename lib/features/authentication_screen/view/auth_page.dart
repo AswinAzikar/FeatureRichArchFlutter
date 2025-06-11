@@ -43,20 +43,13 @@ class _AuthPageState extends State<AuthPage> {
           : null,
       body: Container(
         width: double.maxFinite,
-        decoration: BoxDecoration(
-            // image: DecorationImage(
-            //     image: AssetImage(Assets.png.background.path),
-            //     fit: BoxFit.fill,
-            //     opacity: 0.4),
-            ),
+        decoration: BoxDecoration(),
         child: Column(
           children: [
             Gap(CustomPadding.paddingXXL),
             Gap(CustomPadding.paddingXXL),
             Lottie.asset(
               Assets.lotties.authLottie2,
-              // width: 200.v,
-              // height: 200.v,
               fit: BoxFit.fill,
             ),
           ],
@@ -88,7 +81,7 @@ class _AuthPageState extends State<AuthPage> {
             transitionBuilder: (child, animation) {
               return SlideTransition(
                 position: Tween<Offset>(
-                  begin: const Offset(0, 0.2), // Slide in from bottom
+                  begin: const Offset(0, 0.2),
                   end: Offset.zero,
                 ).animate(animation),
                 child: FadeTransition(opacity: animation, child: child),
@@ -162,13 +155,6 @@ class _AuthPageState extends State<AuthPage> {
                     textColor: Colors.white,
                     fontSize: 14.0,
                   );
-                  // ScaffoldMessenger.of(context).showSnackBar(
-                  //   SnackBar(
-                  //     backgroundColor: CustomColors.scaffoldRed,
-                  //     content: Text('Please enter a valid phone number.'),
-                  //     duration: const Duration(seconds: 2),
-                  //   ),
-                  // );
                 },
         ),
         Gap(CustomPadding.paddingLarge),
@@ -238,8 +224,6 @@ class _AuthPageState extends State<AuthPage> {
           text: 'Verify OTP',
           onPressed: () {
             Navigator.pushNamed(context, NavigationPage.path);
-
-            // Handle OTP verification
           },
         ),
       ],

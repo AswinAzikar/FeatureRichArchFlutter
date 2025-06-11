@@ -35,10 +35,11 @@ class AppRoutes {
           duration: const Duration(milliseconds: 400),
         );
       case NavigationPage.path:
-        return pageRoute(
-          settings,
-          const NavigationPage(),
-        );
+        return PageTransition(
+            duration: const Duration(milliseconds: 800),
+            type: PageTransitionType.rightToLeftWithFade,
+            child: const NavigationPage(),
+            settings: settings);
       // case AuthPage.path:
       //   return pageRoute(settings, const AuthPage());
 
