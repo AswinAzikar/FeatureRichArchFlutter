@@ -33,32 +33,38 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: isOtpStage
-          ? AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios_new_rounded),
-                onPressed: () {
-                  setState(() {
-                    isOtpStage = false;
-                  });
-                },
+      body: Stack(
+        children: [
+          Column(
+            children: [
+              Gap(CustomPadding.paddingXXL),
+              Gap(CustomPadding.paddingXXL),
+              Text("Let's get started !",
+                  style: TextStyle(
+                      fontSize: 24.fSize, fontWeight: FontWeight.bold)),
+              Padding(
+                padding: const EdgeInsets.all(CustomPadding.paddingLarge),
+                child: Lottie.asset(
+                  Assets.lotties.authLottie2,
+                  fit: BoxFit.fill,
+                ),
               ),
-              elevation: 0,
-            )
-          : null,
-      body: Container(
-        width: double.maxFinite,
-        decoration: BoxDecoration(),
-        child: Column(
-          children: [
-            Gap(CustomPadding.paddingXXL),
-            Gap(CustomPadding.paddingXXL),
-            Lottie.asset(
-              Assets.lotties.authLottie2,
-              fit: BoxFit.fill,
-            ),
-          ],
-        ),
+            ],
+          ),
+          Positioned(
+            top: kTextTabBarHeight / 2.v,
+            left: CustomPadding.padding,
+            child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios_new,
+                  color: Colors.black,
+                  size: 20.v,
+                )),
+          )
+        ],
       ),
       bottomSheet: Container(
         padding: EdgeInsets.symmetric(horizontal: CustomPadding.paddingXL),
@@ -163,9 +169,21 @@ class _AuthPageState extends State<AuthPage> {
                 },
         ),
         Gap(CustomPadding.paddingLarge),
-        Divider(
-       
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "OR",
+              style: TextStyle(
+                fontSize: 16.v,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+                color: CustomColors.textColorLightGrey,
+              ),
+            ),
+          ],
         ),
+        Divider(),
         Gap(CustomPadding.padding),
         Row(
           spacing: CustomPadding.paddingLarge,
@@ -206,7 +224,6 @@ class _AuthPageState extends State<AuthPage> {
           buttonLoading: false,
           text: 'Verify OTP',
           onPressed: () {
-            //TODO : implement otp Validation logic
             Navigator.pushNamed(context, NavigationPage.path);
           },
         ),
