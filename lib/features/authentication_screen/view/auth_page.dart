@@ -78,7 +78,7 @@ class _AuthPageState extends State<AuthPage> {
               offset: Offset(0, -3),
             ),
           ],
-          color: CustomColors.secondaryColor,
+          color: CustomColors.backgroundColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(CustomPadding.paddingXL),
             topRight: Radius.circular(CustomPadding.paddingXL),

@@ -14,6 +14,14 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
   bool _canPop = false;
 
+  final List<Widget> _pages = const [
+    Center(child: Text('Home Page')),
+    Center(child: Text('Search Page')),
+    Center(child: Text('Add Page')),
+    Center(child: Text('Notifications Page')),
+    Center(child: Text('Profile Page')),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -30,7 +38,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
         }
       },
       child: Scaffold(
-        body: Center(child: Text("Page ${_selectedIndex + 1}")),
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _pages,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           enableFeedback: false,
           type: BottomNavigationBarType.fixed,
