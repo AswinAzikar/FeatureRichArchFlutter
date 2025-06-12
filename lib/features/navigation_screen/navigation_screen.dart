@@ -30,7 +30,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final appColors = Theme.of(context).extension<AppThemeColors>()!;
+    final theme = Theme.of(context);
+    final appColors = theme.extension<AppThemeColors>()!;
     final TextStyle drawerTextStyle =
         context.labelMedium.copyWith(color: appColors.textContrastColor);
     final navBarTheme = NavigationBarTheme.of(context);
@@ -51,7 +52,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       child: Scaffold(
         key: _scaffoldKey,
         drawer: Drawer(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: theme.scaffoldBackgroundColor,
           child: ListView(
             padding: EdgeInsets.zero,
             children: [

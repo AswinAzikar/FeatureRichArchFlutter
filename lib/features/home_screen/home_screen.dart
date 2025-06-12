@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         title: Text('Home Screen',
             style: TextStyle(color: appColors.textContrastColor)),
         centerTitle: true,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Colors.yellow,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

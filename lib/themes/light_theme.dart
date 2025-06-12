@@ -64,6 +64,7 @@ final lightTheme = ThemeData(
     hintStyle: TextStyle(
       color: Colors.grey,
       fontWeight: FontWeight.w500,
+      
     ),
     // contentPadding:  EdgeInsets.symmetric(
     //   horizontal: 16,
