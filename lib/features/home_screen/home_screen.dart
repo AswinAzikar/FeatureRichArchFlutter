@@ -1,0 +1,54 @@
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter/material.dart';
+
+import '../../extensions/app_theme_extensions.dart';
+import '../../gen/assets.gen.dart';
+import '../../main.dart';
+import '/exporter/exporter.dart';
+
+class HomeScreen extends StatelessWidget {
+  final VoidCallback openDrawer;
+  static const String path = '/home-screen';
+
+  const HomeScreen({super.key, required this.openDrawer});
+
+  @override
+  Widget build(BuildContext context) {
+    final appColors = Theme.of(context).extension<AppThemeColors>()!;
+
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: appColors.dynamicIconColor),
+          onPressed: openDrawer,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () => MyApp.toggleTheme(),
+            icon: Icon(Icons.brightness_6, color: appColors.dynamicIconColor),
+          ),
+        ],
+        title: Text('Home Screen',
+            style: TextStyle(color: appColors.textContrastColor)),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(Assets.svg.rocket),
+          const SizedBox(height: CustomPadding.paddingLarge),
+          Text('Welcome to the Home Screen',
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: appColors.textContrastColor)),
+          const SizedBox(height: CustomPadding.paddingLarge),
+          Text('This is a simple home screen for our app.',
+              style: TextStyle(fontSize: 16, color: appColors.textGrey)),
+        ],
+      ),
+    );
+  }
+}
