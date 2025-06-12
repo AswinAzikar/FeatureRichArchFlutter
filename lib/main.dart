@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'themes/light_theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
+
 final GlobalKey<MyAppState> appKey = GlobalKey<MyAppState>();
 
 void main() async {

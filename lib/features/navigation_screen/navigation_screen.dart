@@ -31,7 +31,6 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     final appColors = Theme.of(context).extension<AppThemeColors>()!;
-// final TextStyle =
     final TextStyle drawerTextStyle =
         context.labelMedium.copyWith(color: appColors.textContrastColor);
     final navBarTheme = NavigationBarTheme.of(context);
@@ -75,11 +74,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
           currentIndex: _selectedIndex,
           onTap: (index) => setState(() => _selectedIndex = index),
           type: BottomNavigationBarType.fixed,
+          // backgroundColor: appColors.background,
           backgroundColor: navBarTheme.backgroundColor,
           selectedItemColor: CustomColors.primaryColor,
           unselectedItemColor: CustomColors.textColorGrey,
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
+          selectedFontSize: 12.fSize,
+          unselectedFontSize: 12.fSize,
           selectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
           unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
           selectedIconTheme: IconThemeData(size: 24.h),
@@ -112,7 +112,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
             margin: EdgeInsets.only(bottom: isSelected ? 2 : 0),
             decoration: BoxDecoration(
               color: CustomColors.primaryColor,
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(CustomPadding.paddingSmall),
             ),
           ),
           Icon(icons[index]),
