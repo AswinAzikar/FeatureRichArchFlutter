@@ -9,7 +9,7 @@ import '../extensions/app_theme_extensions.dart';
 final lightTheme = ThemeData(
   splashFactory: NoSplash.splashFactory,
   brightness: Brightness.light,
-  scaffoldBackgroundColor: Color(0xFFF5F5F5),
+  scaffoldBackgroundColor: CustomColors.backgroundColor,
   useMaterial3: true,
   extensions: [
     AppThemeColors(
