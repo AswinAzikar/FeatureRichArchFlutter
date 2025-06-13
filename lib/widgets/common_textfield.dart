@@ -40,10 +40,10 @@ class CommonTextfield extends StatelessWidget {
       padding:
           const EdgeInsets.symmetric(horizontal: CustomPadding.paddingLarge),
       child: Material(
-          elevation: 1,
-          shadowColor: appColors.dynamicIconColor,
           borderRadius:
               BorderRadius.all(Radius.circular(CustomPadding.paddingXL)),
+          elevation: 1,
+          shadowColor: appColors.dynamicIconColor,
           child: TextFormField(
             keyboardType: keyboardType,
             obscureText: obscureText,
@@ -61,6 +61,7 @@ class CommonTextfield extends StatelessWidget {
               return null;
             },
             decoration: InputDecoration(
+              border: OutlineInputBorder(),
               fillColor: appColors.dynamicIconColor.withValues(alpha: 0.5),
               prefixIcon: Icon(
                 prefixIcon,
