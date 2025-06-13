@@ -7,9 +7,6 @@ import '../constants/constants.dart';
 
 final ThemeData darkTheme = lightTheme.copyWith(
   extensions: [
-
-
-    
     AppThemeColors(
       dynamicIconColor: Colors.white,
       primary: CustomColors.primaryColor,
@@ -58,7 +55,7 @@ final ThemeData darkTheme = lightTheme.copyWith(
   ),
   inputDecorationTheme: lightTheme.inputDecorationTheme.copyWith(
     hintStyle: TextStyle(
-      color: CustomColors.kDarkTextColor,
+      color: CustomColors.textColorGrey,
       fontWeight: FontWeight.w500,
     ),
     border: OutlineInputBorder(

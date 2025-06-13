@@ -1,3 +1,5 @@
+import 'package:FeatureRichArchFlutter/features/search_screen.dart/view/search_screen.dart';
+
 import '../../extensions/app_theme_extensions.dart';
 import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
   List<Widget> get _pages => [
         // const Center(child: Text('Search Page')),
         HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
-        const Center(child: Text('Search Page')),
+        SearchScreen(),
+        // const Center(child: Text('Search Page')),
         const Center(child: Text('Add Page')),
         const Center(child: Text('Notifications Page')),
         const Center(child: Text('Profile Page')),
@@ -70,22 +73,27 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
         // key: _scaffoldKey,
         body: IndexedStack(index: _selectedIndex, children: _pages),
-        bottomNavigationBar: BottomNavigationBar(
-          elevation: 10,
-          currentIndex: _selectedIndex,
-          onTap: (index) => setState(() => _selectedIndex = index),
-          type: BottomNavigationBarType.fixed,
-          // backgroundColor: appColors.background,
-          backgroundColor: navBarTheme.backgroundColor,
-          selectedItemColor: CustomColors.primaryColor,
-          unselectedItemColor: CustomColors.textColorGrey,
-          selectedFontSize: 12.fSize,
-          unselectedFontSize: 12.fSize,
-          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
-          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
-          selectedIconTheme: IconThemeData(size: 24.h),
-          unselectedIconTheme: IconThemeData(size: 24.h),
-          items: List.generate(5, (index) => _buildNavItem(index)),
+        bottomNavigationBar: Material(
+          elevation: 40,
+          shadowColor: Colors.black,
+          child: BottomNavigationBar(
+            elevation: 10,
+            currentIndex: _selectedIndex,
+            onTap: (index) => setState(() => _selectedIndex = index),
+            type: BottomNavigationBarType.fixed,
+            // backgroundColor: appColors.background,
+            backgroundColor: navBarTheme.backgroundColor,
+            selectedItemColor: CustomColors.primaryColor,
+            unselectedItemColor: CustomColors.textColorGrey,
+            selectedFontSize: 12.fSize,
+            unselectedFontSize: 12.fSize,
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
+            unselectedLabelStyle:
+                const TextStyle(fontWeight: FontWeight.normal),
+            selectedIconTheme: IconThemeData(size: 24.h),
+            unselectedIconTheme: IconThemeData(size: 24.h),
+            items: List.generate(5, (index) => _buildNavItem(index)),
+          ),
         ),
       ),
     );

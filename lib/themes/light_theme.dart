@@ -61,21 +61,27 @@ final lightTheme = ThemeData(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
+    fillColor: Colors.white,
+    filled: true,
     hintStyle: TextStyle(
-      color: Colors.grey,
+      color: CustomColors.textColorGrey,
       fontWeight: FontWeight.w500,
-      
     ),
-    // contentPadding:  EdgeInsets.symmetric(
-    //   horizontal: 16,
-    //   vertical: 12,
-    // ),
+    contentPadding: EdgeInsets.symmetric(
+      horizontal: 20,
+      vertical: 16,
+    ),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
-      borderSide: BorderSide(
-        color: Colors.transparent,
-        width: 1.0,
-      ),
+      borderRadius: BorderRadius.circular(50), // Pill shape
+      borderSide: BorderSide.none, // No visible border
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(50),
+      borderSide: BorderSide.none,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(50),
+      borderSide: BorderSide.none,
     ),
   ),
 );
