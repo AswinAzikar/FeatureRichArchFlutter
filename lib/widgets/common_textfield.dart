@@ -1,4 +1,5 @@
 import 'package:FeatureRichArchFlutter/constants/constants.dart';
+import 'package:FeatureRichArchFlutter/extensions/app_theme_extensions.dart';
 import 'package:flutter/material.dart';
 
 class CommonTextfield extends StatelessWidget {
@@ -34,13 +35,15 @@ class CommonTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appColors = Theme.of(context).extension<AppThemeColors>()!;
     return Padding(
       padding:
           const EdgeInsets.symmetric(horizontal: CustomPadding.paddingLarge),
       child: Material(
           elevation: 1,
-          shadowColor: Colors.black,
-          borderRadius: BorderRadius.all(Radius.circular(50)),
+          shadowColor: appColors.dynamicIconColor,
+          borderRadius:
+              BorderRadius.all(Radius.circular(CustomPadding.paddingXL)),
           child: TextFormField(
             keyboardType: keyboardType,
             obscureText: obscureText,
@@ -58,12 +61,17 @@ class CommonTextfield extends StatelessWidget {
               return null;
             },
             decoration: InputDecoration(
+              fillColor: appColors.dynamicIconColor.withValues(alpha: 0.5),
               prefixIcon: Icon(
                 prefixIcon,
-                color: CustomColors.textColorGrey,
+                color: appColors.background,
               ),
-              suffixIcon: Icon(sufixIcon),
+              suffixIcon: Icon(sufixIcon, color: appColors.background),
               hintText: hintText,
+              hintStyle: TextStyle(
+                color: appColors.textLightGrey,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           )),
     );

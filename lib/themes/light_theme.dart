@@ -72,15 +72,16 @@ final lightTheme = ThemeData(
       vertical: 16,
     ),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(50), // Pill shape
+      borderRadius:
+          BorderRadius.circular(CustomPadding.paddingXL), // Pill shape
       borderSide: BorderSide.none, // No visible border
     ),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(50),
+      borderRadius: BorderRadius.circular(CustomPadding.paddingXL),
       borderSide: BorderSide.none,
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(50),
+      borderRadius: BorderRadius.circular(CustomPadding.paddingXL),
       borderSide: BorderSide.none,
     ),
   ),
