@@ -6,17 +6,15 @@ Pages or Screens
 4. landing_screen: Initial welcome or introduction page for the app.
 5. navigation_screen: Manages navigation and routing between different screens.
 6. splash_screen: Shows a splash/loading screen when the app starts.
-
-
-
-
+7. search_screen:searching 
+8.
 
 
 
 widgets or components 
 ---------------------
 
-1. 
+1. common_textfield: A reusable text field widget with customizable properties like hint text, validation, and styling.
 2. 
 3. 
 
