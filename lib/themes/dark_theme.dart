@@ -5,8 +5,8 @@ import 'light_theme.dart';
 import '../constants/constants.dart';
 
 final ThemeData darkTheme = lightTheme.copyWith(
-  brightness: Brightness.dark,
-  useMaterial3: true,
+   brightness: Brightness.dark,
+   useMaterial3: true,
   scaffoldBackgroundColor: Colors.black,
   navigationBarTheme: lightTheme.navigationBarTheme.copyWith(
     backgroundColor: Colors.black,
