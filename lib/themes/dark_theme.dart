@@ -1,15 +1,29 @@
 import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../extensions/app_theme_extensions.dart';
 import 'light_theme.dart';
 import '../constants/constants.dart';
 
 final ThemeData darkTheme = lightTheme.copyWith(
-   brightness: Brightness.dark,
-   useMaterial3: true,
-  scaffoldBackgroundColor: Colors.black,
+  extensions: [
+
+
+    
+    AppThemeColors(
+      dynamicIconColor: Colors.white,
+      primary: CustomColors.primaryColor,
+      background: CustomColors.kDarkScaffold,
+      textContrastColor: CustomColors.textColorLight,
+      textGrey: Colors.grey,
+      textLightGrey: CustomColors.textColorLightGrey,
+    ),
+  ],
+  scaffoldBackgroundColor: CustomColors.kDarkScaffold,
+  brightness: Brightness.dark,
+  // scaffoldBackgroundColor: Colors.black87,
   navigationBarTheme: lightTheme.navigationBarTheme.copyWith(
-    backgroundColor: Colors.black,
+    backgroundColor: CustomColors.kDarkBottomNav,
     labelTextStyle: WidgetStatePropertyAll(
       TextStyle(
         color: CustomColors.textColorDark,
@@ -24,36 +38,34 @@ final ThemeData darkTheme = lightTheme.copyWith(
       ),
     ),
   ),
-  dividerTheme: lightTheme.dividerTheme.copyWith(
-    color: CustomColors.textColorDarkGrey.withValues(alpha: 0.3),
-  ),
+  dividerTheme:
+      lightTheme.dividerTheme.copyWith(color: CustomColors.kDarkDividerColor),
   appBarTheme: lightTheme.appBarTheme.copyWith(
+    color: CustomColors.kDarkAppBar,
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.black,
+      statusBarColor: CustomColors.kDarkAppBar,
       statusBarIconBrightness: Brightness.light,
     ),
-    backgroundColor: Colors.black,
+    // backgroundColor: CustomColors.kDarkScaffold,
     foregroundColor: Colors.white,
     titleTextStyle: TextStyle(
-      color: CustomColors.textColorDark,
       fontSize: 18.fSize,
       fontWeight: FontWeight.w500,
+      color: CustomColors.textColorDark,
+      // fontSize: 18.fSize,
+      // fontWeight: FontWeight.w500,
     ),
   ),
   inputDecorationTheme: lightTheme.inputDecorationTheme.copyWith(
     hintStyle: TextStyle(
-      color: CustomColors.textColorGrey,
+      color: CustomColors.kDarkTextColor,
       fontWeight: FontWeight.w500,
     ),
-    // contentPadding: EdgeInsets.symmetric(
-    //   horizontal: CustomPadding.paddingLarge,
-    //   vertical: 12.v,
-    // ),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
       borderSide: const BorderSide(
         color: Colors.transparent,
-        width: 1.0,
+        // width: 1.0,
       ),
     ),
   ),

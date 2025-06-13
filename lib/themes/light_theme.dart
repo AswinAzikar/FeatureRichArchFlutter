@@ -7,19 +7,25 @@ import 'package:flutter/services.dart';
 import '../extensions/app_theme_extensions.dart';
 
 final lightTheme = ThemeData(
+  splashFactory: NoSplash.splashFactory,
   brightness: Brightness.light,
   scaffoldBackgroundColor: Color(0xFFF5F5F5),
   useMaterial3: true,
   extensions: [
     AppThemeColors(
-      primary: Color(0xFF3AB54A),
-      background: Color(0xFFF5F5F5),
-      textDark: Colors.black87,
+      dynamicIconColor: Colors.black,
+      primary: CustomColors.primaryColor,
+      background: CustomColors.backgroundColor,
+      textContrastColor: Colors.black87,
       textGrey: Colors.grey,
-      textLightGrey: Color(0xFFD3D3D3),
+      textLightGrey: CustomColors.textColorLightGrey,
     ),
   ],
   navigationBarTheme: NavigationBarThemeData(
+    overlayColor: WidgetStatePropertyAll(Colors.transparent),
+    indicatorShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
+    ),
     height: kBottomNavigationBarHeight,
     backgroundColor: Color(0xFFF5F5F5),
     indicatorColor: Color(0xFF3AB54A),
@@ -58,6 +64,7 @@ final lightTheme = ThemeData(
     hintStyle: TextStyle(
       color: Colors.grey,
       fontWeight: FontWeight.w500,
+      
     ),
     // contentPadding:  EdgeInsets.symmetric(
     //   horizontal: 16,

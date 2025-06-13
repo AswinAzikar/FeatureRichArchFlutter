@@ -24,28 +24,37 @@ class CustomDuration {
   static const Duration animationDurationLarge = Duration(seconds: 1);
 }
 
+
 class CustomColors {
+  // === Light Theme Colors ===
   static const primaryColor = Color(0xFF3AB54A);
-
   static const secondaryColor = Color(0xFFFEE440);
-  static const tertiaryColor = Color.fromARGB(255, 240, 240, 240);
-// static const backgroundColor = Color.fromARGB(255, 255, 255, 255);
+  static const tertiaryColor = Color(0xFFF0F0F0);
 
-  static const Color backgroundColor = Color(0xFFF5F5F5);
+  static const backgroundColor = Color(0xFFF5F5F5);
+  static const textColor = Color(0xFF000000);
+  static const textColorLight = Color(0xFFFFFFFF);
+  static const textColorDark = Color(0xFF000000);
+  static const textColorGrey = Color(0xFF808080);
+  static const textColorLightGrey = Color(0xFFC8C8C8);
+  static const textColorDarkGrey = Color(0xFF323232);
+
+  static const textfieldphoneColors = Color(0xFFF0F8FF);
   static const scaffoldRed = Colors.red;
-  static const textColor = Color.fromARGB(255, 0, 0, 0);
-  static const textColorLight = Color.fromARGB(255, 255, 255, 255);
-  static const textColorDark = Color.fromARGB(255, 0, 0, 0);
-  static const textColorGrey = Color.fromARGB(255, 128, 128, 128);
-  static const textColorLightGrey = Color.fromARGB(255, 200, 200, 200);
-  static const textColorDarkGrey = Color.fromARGB(255, 50, 50, 50);
-  static const Color buttonColor1 = Colors.blue;
-  static const Color buttonColor2 = Colors.lightGreen;
-  static const Color textfieldphoneColors = Color(0xffF0F8FF);
-  static const LinearGradient buttonGradient = LinearGradient(
-    colors: [buttonColor1, buttonColor2],
-  );
 
+  // === Dark Theme Colors ===
+  static const kDarkScaffold = Color(0xFF121212);
+  static const kDarkAppBar = Color(0xFF1F1F1F);
+  static const kDarkDrawer = Color(0xFF1E1E1E);
+  static const kDarkBottomNav = Color(0xFF1A1A1A);
+  static const kDarkPrimary = Color(0xFFFFC107);
+  static const kDarkTextColor = Colors.white70;
+  static const kDarkTextFieldColor = Color(0xFF2C2C2C);
+
+  static final kDarkDividerColor = Colors.grey[800];
+  static final kDarkdynamicIconColor = Colors.white;
+
+  // === Gradients ===
   static const LinearGradient fruitlyGradient = LinearGradient(
     colors: [secondaryColor, primaryColor],
     begin: Alignment.topLeft,
@@ -54,9 +63,9 @@ class CustomColors {
 
   static const LinearGradient orangeGradient = LinearGradient(
     colors: [
-      Color(0xFFDA7A1F), // brighter amber tone
-      Color(0xFFAC580F), // original
-      Color(0xFF7A3F0A), // darker, richer end
+      Color(0xFFDA7A1F), // bright amber
+      Color(0xFFAC580F), // base orange
+      Color(0xFF7A3F0A), // deep rich
     ],
     stops: [0.0, 0.5, 1.0],
     begin: Alignment.topLeft,
@@ -65,9 +74,9 @@ class CustomColors {
 
   static const LinearGradient greenGradient = LinearGradient(
     colors: [
-      Color(0xFF66C870), // lighter tone
-      Color(0xFF3AB54A), // base green
-      Color(0xFF2A8F36), // deeper tone
+      Color(0xFF66C870), // light green
+      Color(0xFF3AB54A), // base
+      Color(0xFF2A8F36), // dark green
     ],
     stops: [0.0, 0.5, 1.0],
     begin: Alignment.topLeft,
@@ -76,23 +85,16 @@ class CustomColors {
 
   static const LinearGradient newbuttonGradient = LinearGradient(
     colors: [
-      Color(0xFF3AB54A),
-      Color(0xFFF1C14F),
-      Color(0xFFAC580F),
+      primaryColor,
+      Color(0xFFF1C14F), // yellow-gold
+      Color(0xFFAC580F), // orange-brown
     ],
     stops: [0.0, 0.5, 1.0],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    // colors: [
-    //   Color(0xFF3AB54A), // Your bright green
-    //   Color(0xFF819E1B), // Muted chartreuse (midpoint)
-    //   Color(0xFFAC580F), // Your deep orange-brown
-    // ],
-    // stops: [0.0, 0.5, 1.0],
-    // begin: Alignment.topLeft,
-    // end: Alignment.bottomRight,
   );
 }
+
 
 const loremIpsum =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
