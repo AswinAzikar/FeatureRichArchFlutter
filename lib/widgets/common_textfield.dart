@@ -2,7 +2,7 @@ import 'package:FeatureRichArchFlutter/constants/constants.dart';
 import 'package:FeatureRichArchFlutter/extensions/app_theme_extensions.dart';
 import 'package:flutter/material.dart';
 
-class CommonTextfield extends StatelessWidget {
+class CommonTextfield extends StatefulWidget {
   final IconData? prefixIcon;
   final IconData? sufixIcon;
   final String hintText;
@@ -34,6 +34,17 @@ class CommonTextfield extends StatelessWidget {
   });
 
   @override
+  State<CommonTextfield> createState() => _CommonTextfieldState();
+}
+
+class _CommonTextfieldState extends State<CommonTextfield> {
+  @override
+  void dispose() {
+    widget.controller?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final appColors = Theme.of(context).extension<AppThemeColors>()!;
     return Padding(
@@ -45,18 +56,19 @@ class CommonTextfield extends StatelessWidget {
           elevation: 1,
           shadowColor: appColors.dynamicIconColor,
           child: TextFormField(
-            keyboardType: keyboardType,
-            obscureText: obscureText,
-            controller: controller,
-            maxLines: obscureText ? 1 : maxLines,
-            minLines: obscureText ? 1 : minLines,
-            onChanged: onChanged,
+            keyboardType: widget.keyboardType,
+            obscureText: widget.obscureText,
+            controller: widget.controller,
+            maxLines: widget.obscureText ? 1 : widget.maxLines,
+            minLines: widget.obscureText ? 1 : widget.minLines,
+            onChanged: widget.onChanged,
             validator: (value) {
-              if (isRequired && (value == null || value.trim().isEmpty)) {
+              if (widget.isRequired &&
+                  (value == null || value.trim().isEmpty)) {
                 return 'This field is required';
               }
-              if (customValidator != null) {
-                return customValidator!(value);
+              if (widget.customValidator != null) {
+                return widget.customValidator!(value);
               }
               return null;
             },
@@ -64,11 +76,12 @@ class CommonTextfield extends StatelessWidget {
               border: OutlineInputBorder(),
               fillColor: appColors.dynamicIconColor.withValues(alpha: 0.5),
               prefixIcon: Icon(
-                prefixIcon,
+                widget.prefixIcon,
                 color: appColors.background..withValues(alpha: 0.5),
               ),
-              suffixIcon: Icon(sufixIcon, color: appColors.background.withValues(alpha: 0.5)),
-              hintText: hintText,
+              suffixIcon: Icon(widget.sufixIcon,
+                  color: appColors.background.withValues(alpha: 0.5)),
+              hintText: widget.hintText,
               hintStyle: TextStyle(
                 color: appColors.background.withValues(alpha: 0.5),
                 fontWeight: FontWeight.w500,
