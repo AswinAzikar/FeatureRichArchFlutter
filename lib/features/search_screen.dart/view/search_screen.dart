@@ -15,6 +15,7 @@ class SearchScreen extends StatelessWidget {
           CommonTextfield(
             prefixIcon: Icons.search,
             hintText: 'Search',
+          
           )
         ],
       ),

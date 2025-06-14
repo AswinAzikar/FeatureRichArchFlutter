@@ -65,12 +65,12 @@ class CommonTextfield extends StatelessWidget {
               fillColor: appColors.dynamicIconColor.withValues(alpha: 0.5),
               prefixIcon: Icon(
                 prefixIcon,
-                color: appColors.background,
+                color: appColors.background..withValues(alpha: 0.5),
               ),
-              suffixIcon: Icon(sufixIcon, color: appColors.background),
+              suffixIcon: Icon(sufixIcon, color: appColors.background.withValues(alpha: 0.5)),
               hintText: hintText,
               hintStyle: TextStyle(
-                color: appColors.textLightGrey,
+                color: appColors.background.withValues(alpha: 0.5),
                 fontWeight: FontWeight.w500,
               ),
             ),
