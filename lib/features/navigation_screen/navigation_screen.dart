@@ -53,6 +53,13 @@ class _NavigationScreenState extends State<NavigationScreen> {
         }
       },
       child: Scaffold(
+        drawerEnableOpenDragGesture: true,
+        onDrawerChanged: (isOpened) {
+          if (!isOpened) FocusScope.of(context).unfocus();
+
+
+          
+        },
         key: _scaffoldKey,
         drawer: Drawer(
           backgroundColor: theme.scaffoldBackgroundColor,
