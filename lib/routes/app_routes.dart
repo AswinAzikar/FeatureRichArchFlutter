@@ -1,13 +1,11 @@
 import 'package:FeatureRichArchFlutter/core/logger.dart';
 import 'package:FeatureRichArchFlutter/features/authentication_screen/view/auth_page.dart';
-import 'package:FeatureRichArchFlutter/features/api_listing_screen/view/api_listing_screen.dart';
 import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
 import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_screen.dart';
 import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../features/home_screen/home_screen.dart';
 // import 'package:page_transition/page_transition.dart';
 
 class AppRoutes {
