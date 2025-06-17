@@ -2,25 +2,24 @@ import 'package:FeatureRichArchFlutter/core/api/base_url_constant.dart';
 import 'package:FeatureRichArchFlutter/core/api/dio_helper.dart';
 
 class HomeService {
-  static Future<List<dynamic>?> getBeerList(int page, int limit) async {
+  static Future<Map<String, dynamic>?> getPost(int skip, int limit) async {
     try {
       final response = await DioHelper().get(
-        '/beers',
-        type: ApiType.baseUrl,
+        '/products',
+        type: ApiType.product,
         queryParameters: {
-          'page': page,
-          'per_page':
-              limit,
+          'skip': skip, 
+          'limit': limit,
         },
       );
 
       if (response.statusCode == 200) {
         return response.data;
       } else {
-        throw Exception('Failed to load beers: ${response.statusCode}');
+        throw Exception('Failed to load posts: ${response.statusCode}');
       }
     } catch (e) {
-      throw Exception('Failed to fetch beers: $e');
+      throw Exception('Failed to fetch posts: $e');
     }
   }
 }

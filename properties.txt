@@ -7,7 +7,7 @@ Pages or Screens
 5. navigation_screen: Manages navigation and routing between different screens.
 6. splash_screen: Shows a splash/loading screen when the app starts.
 7. search_screen:searching 
-8.
+8. paginated_home_screen: Displays a paginated list of items.
 
 
 

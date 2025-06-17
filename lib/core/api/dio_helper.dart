@@ -36,7 +36,7 @@ class DioHelper with ErrorExceptionHandler {
             logInfo(
               "RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}",
             );
-            logSuccess("Data: ${response.data}");
+            logInfo("Data: ${response.data}");
             return handler.next(response);
           },
           onError: (DioException err, handler) {

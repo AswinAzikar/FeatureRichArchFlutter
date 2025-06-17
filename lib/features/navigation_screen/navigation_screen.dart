@@ -24,9 +24,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   List<Widget> get _pages => [
         // const Center(child: Text('Search Page')),
-        // HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
-        PaginatedHomescreen(
-            openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+        HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+        // PaginatedHomescreen(
+        //     openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
 
         SearchScreen(),
         // const Center(child: Text('Search Page')),
