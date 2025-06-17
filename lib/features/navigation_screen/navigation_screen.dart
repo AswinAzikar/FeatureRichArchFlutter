@@ -1,3 +1,4 @@
+import 'package:FeatureRichArchFlutter/features/paginated_home_screen/view/paginated_homescreen.dart';
 import 'package:FeatureRichArchFlutter/features/search_screen.dart/view/search_screen.dart';
 
 import '../../extensions/app_theme_extensions.dart';
@@ -23,7 +24,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   List<Widget> get _pages => [
         // const Center(child: Text('Search Page')),
-        HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+        // HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+        PaginatedHomescreen(
+            openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+
         SearchScreen(),
         // const Center(child: Text('Search Page')),
         const Center(child: Text('Add Page')),
@@ -72,7 +76,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
         ),
 
         // key: _scaffoldKey,
-        body: IndexedStack(index: _selectedIndex, children: _pages),
+        body: GestureDetector(
+            onTap: () {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: IndexedStack(index: _selectedIndex, children: _pages)),
         bottomNavigationBar: Material(
           elevation: 40,
           shadowColor: Colors.black,

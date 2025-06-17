@@ -7,6 +7,7 @@ class CommonTextfield extends StatelessWidget {
   final IconData? sufixIcon;
   final String hintText;
   final TextEditingController? controller;
+  final FocusNode? focusNode;
   final Color? prefixIconColor;
   final Color? suffixIconColor;
   final bool obscureText;
@@ -16,6 +17,10 @@ class CommonTextfield extends StatelessWidget {
   final void Function(String)? onChanged;
   final String? Function(String?)? customValidator;
   final bool isRequired;
+  final bool autofocus;
+  final bool readOnly;
+  final TextInputAction? textInputAction;
+  final void Function(String)? onFieldSubmitted;
   const CommonTextfield({
     super.key,
     this.prefixIcon,
@@ -31,6 +36,11 @@ class CommonTextfield extends StatelessWidget {
     this.onChanged,
     this.customValidator,
     this.isRequired = false,
+    this.autofocus = false,
+    this.readOnly = false,
+    this.focusNode,
+    this.textInputAction,
+    this.onFieldSubmitted,
   });
 
   @override
@@ -45,6 +55,14 @@ class CommonTextfield extends StatelessWidget {
           elevation: 1,
           shadowColor: appColors.dynamicIconColor,
           child: TextFormField(
+            autofocus: autofocus,
+            readOnly: readOnly,
+            focusNode: focusNode,
+            textInputAction: textInputAction,
+            onTapOutside: (_) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            onFieldSubmitted: onFieldSubmitted,
             keyboardType: keyboardType,
             obscureText: obscureText,
             controller: controller,
@@ -67,7 +85,8 @@ class CommonTextfield extends StatelessWidget {
                 prefixIcon,
                 color: appColors.background..withValues(alpha: 0.5),
               ),
-              suffixIcon: Icon(sufixIcon, color: appColors.background.withValues(alpha: 0.5)),
+              suffixIcon: Icon(sufixIcon,
+                  color: appColors.background.withValues(alpha: 0.5)),
               hintText: hintText,
               hintStyle: TextStyle(
                 color: appColors.background.withValues(alpha: 0.5),
