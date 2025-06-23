@@ -7,12 +7,18 @@ import '../../gen/assets.gen.dart';
 import '../../main.dart';
 import '/exporter/exporter.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   final VoidCallback openDrawer;
   static const String path = '/home-screen';
 
   const HomeScreen({super.key, required this.openDrawer});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String? selectedGender;
   @override
   Widget build(BuildContext context) {
     final appColors = Theme.of(context).extension<AppThemeColors>()!;
@@ -21,7 +27,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu, color: appColors.dynamicIconColor),
-          onPressed: openDrawer,
+          onPressed: widget.openDrawer,
         ),
         actions: [
           IconButton(
