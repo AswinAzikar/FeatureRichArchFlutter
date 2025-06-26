@@ -10,6 +10,7 @@ import '../constants/constants.dart';
 import '../services/file_picker.dart';
 import '../services/size_utils.dart';
 import '../widgets/upload_image_widget.dart';
+import '../widgets/user_avatar.dart';
 // import '../widgets/upload_image_widget.dart';
 // import '../widgets/user_avatar.dart';
 

@@ -1,0 +1,41 @@
+Pages or Screens
+----------------
+1. api_listing_screen: Displays data fetched from APIs, such as coffee and post listings.
+2. authentication_screen: Handles user login, registration, and authentication flows.
+3. home_screen: Main dashboard or landing area after successful authentication.
+4. landing_screen: Initial welcome or introduction page for the app.
+5. navigation_screen: Manages navigation and routing between different screens.
+6. splash_screen: Shows a splash/loading screen when the app starts.
+7. search_screen:searching 
+8. paginated_home_screen: Displays a paginated list of items.
+
+
+
+widgets or components 
+---------------------
+
+1. common_textfield: A reusable text field widget with customizable properties like hint text, validation, and styling.
+2.  custom_dropdown_field: A reusable dropdown field widget.
+3. 
+
+
+
+mixins
+-------
+1. date_selection_mixin: Provides utilities for selecting and handling dates.
+2. event_listener: Adds event listening capabilities to classes.
+3. force_update: Enables forced UI updates or state refreshes.
+4. form_validator_mixin: Supplies form validation logic and helpers.
+5. mobile_and_phone_mixin: Handles mobile number and phone-related logic.
+6. name_mixin: Manages name-related validation or formatting.
+7. search_mixin: Adds search/filtering functionality.
+8. state_mixin: Manages and tracks widget or app state.
+9. user_image_mixin: Handles user image selection, upload, or display.
+
+
+
+extensions
+----------
+
+1. app_theme_extensions: Adds custom theme-related properties or methods to existing classes.
+2. font_extension: Provides additional font utilities or helpers for text styling.

@@ -1,7 +1,6 @@
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+import '/exporter/exporter.dart';
 
-import 'package:FeatureRichArchFlutter/services/size_utils.dart';
-import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
+import '/widgets/loading_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -27,10 +26,9 @@ class CommonBottomSheet extends StatelessWidget {
     return Material(
       borderRadius: BorderRadius.vertical(
         top: Radius.circular(CustomPadding.paddingXL),
-        bottom:
-            SizeUtils.deviceType == DeviceType.mobile
-                ? Radius.zero
-                : Radius.circular(CustomPadding.paddingXL),
+        bottom: SizeUtils.deviceType == DeviceType.mobile
+            ? Radius.zero
+            : Radius.circular(CustomPadding.paddingXL),
       ),
       child: Container(
         constraints: BoxConstraints(
@@ -52,7 +50,7 @@ class CommonBottomSheet extends StatelessWidget {
                     borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(CustomPadding.paddingXL),
                     ),
-                    gradient: CustomColors.buttonGradient,
+                    gradient: CustomColors.newbuttonGradient,
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -63,10 +61,9 @@ class CommonBottomSheet extends StatelessWidget {
                       textAlign: TextAlign.center,
                       (title ?? ""),
                       style: context.labelLarge.copyWith(
-                        fontSize:
-                            SizeUtils.deviceType == DeviceType.mobile
-                                ? 20.fSize
-                                : 40.fSize,
+                        fontSize: SizeUtils.deviceType == DeviceType.mobile
+                            ? 20.fSize
+                            : 40.fSize,
                       ),
                     ),
                   ),

@@ -1,5 +1,5 @@
 import '/constants/constants.dart';
-// import 'widgets/common_textfield.dart';
+import '/widgets/common_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -24,12 +24,12 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       body: Column(
         children: [
-          // Gap(CustomPadding.paddingXXL),
-          // CommonTextfield(
-          //   controller: controller,
-          //   prefixIcon: Icons.search,
-          //   hintText: 'Search',
-          // )
+          Gap(CustomPadding.paddingXXL),
+          CommonTextfield(
+            controller: controller,
+            prefixIcon: Icons.search,
+            hintText: 'Search',
+          )
         ],
       ),
     );
