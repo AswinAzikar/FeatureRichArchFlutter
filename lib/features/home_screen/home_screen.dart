@@ -54,12 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: CustomPadding.paddingLarge),
           Text('This is a simple home screen for our app.',
               style: TextStyle(fontSize: 16, color: appColors.textGrey)),
-          CustomDropdownField(
-            label: '',
-            value: '',
-            items: [],
-            onChanged: (p0) {},
-          )
         ],
       ),
     );
