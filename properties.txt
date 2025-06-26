@@ -19,8 +19,8 @@ widgets or components
 
 3. not_found_widget: Displays a user-friendly message or graphic when no data or results are found.
 
-3. custom_tabbar_with_view.dart: Custom Tabbar and Tabview
-4. rating_star: A widget to display and handle star-based rating functionality.
+4. custom_tabbar_with_view.dart: Custom Tabbar and Tabview
+5. rating_star: A widget to display and handle star-based rating functionality.
 
 
 
