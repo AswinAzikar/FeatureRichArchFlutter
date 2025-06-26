@@ -1,3 +1,8 @@
+import 'package:FeatureRichArchFlutter/core/logger.dart';
+import 'package:custom_rating_bar/custom_rating_bar.dart';
+import 'package:flutter/services.dart';
+import 'package:gaimon/gaimon.dart';
+
 import '/constants/constants.dart';
 import '/widgets/common_textfield.dart';
 import 'package:flutter/material.dart';
@@ -29,9 +34,12 @@ class _SearchScreenState extends State<SearchScreen> {
             controller: controller,
             prefixIcon: Icons.search,
             hintText: 'Search',
-          )
+          ),
+          Gap(CustomPadding.paddingXXL),
+        
         ],
       ),
     );
   }
 }
+
