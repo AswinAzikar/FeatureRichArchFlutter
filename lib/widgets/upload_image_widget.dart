@@ -2,9 +2,11 @@ import 'dart:io';
 
 // import 'package:constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../services/shared_pref_services.dart';
 
 class UploadImageWidget extends StatelessWidget {
   const UploadImageWidget({
@@ -29,11 +31,14 @@ class UploadImageWidget extends StatelessWidget {
       onTap: onTap,
       borderRadius: borderradius,
       child: DottedBorder(
-        dashPattern: const [10, 5],
-        color: Colors.grey,
-        radius: const Radius.circular(CustomPadding.paddingXL),
-        strokeCap: StrokeCap.butt,
-        borderType: BorderType.RRect,
+        options: RectDottedBorderOptions(
+          dashPattern: const [10, 5],
+          color: Colors.grey,
+          // radius: const Radius.circular(CustomPadding.paddingXL),
+          strokeCap: StrokeCap.butt,
+          // borderType: BorderType.RRect,
+        ),
+      
         child: AspectRatio(
           aspectRatio: aspectRatio,
           child: Builder(

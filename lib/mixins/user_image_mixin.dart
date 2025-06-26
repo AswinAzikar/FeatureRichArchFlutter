@@ -55,11 +55,11 @@ mixin UserImageMixin<T extends StatefulWidget> on State<T> {
 
   Widget userImage({String? networkImage, VoidCallback? onChanged}) => Stack(
         children: [
-          UserAvatar(
-            size: SizeUtils.width * .5,
-            imageFile: selectedProfileImage,
-            imageUrl: networkImage,
-          ),
+          // UserAvatar(
+          //   size: SizeUtils.width * .5,
+          //   imageFile: selectedProfileImage,
+          //   imageUrl: networkImage,
+          // ),
           Positioned(
             top: 0,
             bottom: 0,
