@@ -31,7 +31,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
         SearchScreen(),
         // const Center(child: Text('Search Page')),
-        const Center(child: Text('Add Page')),
+        AddScreen(),
+        // const Center(child: Text('Add Page')),
         const Center(child: Text('Notifications Page')),
         // const Center(child: Text('Profile Page')),
         ProfileScreen()

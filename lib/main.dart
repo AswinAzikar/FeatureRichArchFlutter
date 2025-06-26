@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import '/exporter/exporter.dart';
 import '/features/splash_screen/splash_screen.dart';
 import '/routes/app_routes.dart';
@@ -13,6 +15,7 @@ final GlobalKey<MyAppState> appKey = GlobalKey<MyAppState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await DioHelper().init();
   await SharedPreferencesService.i.initialize();
 
