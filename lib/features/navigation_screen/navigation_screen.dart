@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/features/profile_screen/profile_screen.dart';
+import '/features/profile_screen/profile_screen.dart';
 
 import '../add_screen/view/add_screen.dart';
 import '/features/search_screen.dart/view/search_screen.dart';

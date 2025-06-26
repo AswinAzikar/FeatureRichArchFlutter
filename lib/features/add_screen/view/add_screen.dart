@@ -1,5 +1,5 @@
-import 'package:FeatureRichArchFlutter/features/tabbar_example/tabbar_example.dart';
-import 'package:FeatureRichArchFlutter/widgets/mini_loading_button.dart';
+import '/features/tabbar_example/tabbar_example.dart';
+import '/widgets/mini_loading_button.dart';
 import 'package:flutter/material.dart';
 
 class AddScreen extends StatelessWidget {

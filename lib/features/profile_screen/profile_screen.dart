@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
+import '/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

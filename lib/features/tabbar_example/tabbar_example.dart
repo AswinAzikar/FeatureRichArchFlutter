@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/widgets/custom_tabbar_with_view.dart';
+import '/widgets/custom_tabbar_with_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../extensions/app_theme_extensions.dart';
