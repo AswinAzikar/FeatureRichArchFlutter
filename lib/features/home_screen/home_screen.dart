@@ -1,3 +1,4 @@
+import 'package:FeatureRichArchFlutter/widgets/custom_dropdown_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';
@@ -53,6 +54,12 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: CustomPadding.paddingLarge),
           Text('This is a simple home screen for our app.',
               style: TextStyle(fontSize: 16, color: appColors.textGrey)),
+          CustomDropdownField(
+            label: '',
+            value: '',
+            items: [],
+            onChanged: (p0) {},
+          )
         ],
       ),
     );
