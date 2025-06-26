@@ -1,6 +1,7 @@
-import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
-import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
+import '/features/landing_screen/landing_page.dart';
+import '/features/navigation_screen/navigation_screen.dart';
 
+import '../../services/shared_pref_services.dart';
 import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_animate/flutter_animate.dart';
@@ -32,7 +33,12 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacementNamed(LandingPage.path);
+        final token = SharedPreferencesService.i.token;
+        if (token.isNotEmpty) {
+          Navigator.of(context).pushReplacementNamed(NavigationScreen.path);
+        } else {
+          Navigator.of(context).pushReplacementNamed(LandingPage.path);
+        }
       }
     });
 
@@ -48,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      // backgroundColor: Colors.red,
       body: NetworkResource(
         future,
         error: (error) => ErrorWidgetWithRetry(

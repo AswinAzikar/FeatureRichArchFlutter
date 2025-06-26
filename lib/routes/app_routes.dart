@@ -1,8 +1,12 @@
-import 'package:FeatureRichArchFlutter/core/logger.dart';
-import 'package:FeatureRichArchFlutter/features/home_screen/view/home_screen.dart';
-import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
-import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
+import '/core/logger.dart';
+import '/features/authentication_screen/view/auth_page.dart';
+import '/features/landing_screen/landing_page.dart';
+import '/features/navigation_screen/navigation_screen.dart';
+import '/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+
+// import 'package:page_transition/page_transition.dart';
 
 class AppRoutes {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -22,11 +26,29 @@ class AppRoutes {
           settings,
           const LandingPage(),
         );
-      case HomeScreen.path:
-        return pageRoute(
-          settings,
-          const HomeScreen(),
+
+      case AuthPage.path:
+        return PageTransition(
+          childCurrent: const LandingPage(),
+          type: PageTransitionType.sharedAxisHorizontal,
+          child: AuthPage(),
+          duration: const Duration(milliseconds: 400),
         );
+      case NavigationScreen.path:
+        return PageTransition(
+            duration: const Duration(milliseconds: 800),
+            type: PageTransitionType.rightToLeftWithFade,
+            child: const NavigationScreen(),
+            settings: settings);
+      // case AuthPage.path:
+      //   return pageRoute(settings, const AuthPage());
+
+      //  case HomeScreen.path:
+      //     final key = settings.arguments as GlobalKey<ScaffoldState>?;
+      //     return pageRoute(
+      //       settings,
+      //       HomeScreen(scaffoldKey: key ?? GlobalKey<ScaffoldState>()),
+      //     );
       default:
         return null;
     }

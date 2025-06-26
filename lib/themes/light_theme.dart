@@ -1,26 +1,88 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
+// import '../ants/ants.dart';
+import '../constants/constants.dart';
+import '../services/size_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-ThemeData lightTheme = ThemeData(
-    useMaterial3: true, scaffoldBackgroundColor: CustomColors.backgroundColor
+import '../extensions/app_theme_extensions.dart';
 
-    // colorScheme: ColorScheme.fromSeed(
-    //   seedColor: Colors.deepPurple,
-    //   primary: Colors.deepPurple,
-    //   secondary: Colors.purpleAccent,
-    //   surface: Colors.white,
-    //   background: Colors.white,
-    //   onPrimary: Colors.white,
-    //   onSecondary: Colors.black87,
-    //   onSurface: Colors.black87,
-    //   onBackground: Colors.black87,
-    // ),
-    // appBarTheme: AppBarTheme(
-    //   backgroundColor: Colors.deepPurple,
-    //   foregroundColor: Colors.white,
-    // ),
-    // textTheme: TextTheme(
-    //   bodyText1: TextStyle(color: Colors.black87),
-    //   bodyText2: TextStyle(color: Colors.black54),
-    // ),
-    );
+final lightTheme = ThemeData(
+  splashFactory: NoSplash.splashFactory,
+  brightness: Brightness.light,
+  scaffoldBackgroundColor: CustomColors.backgroundColor,
+  useMaterial3: true,
+  extensions: [
+    AppThemeColors(
+      dynamicIconColor: Colors.black,
+      primary: CustomColors.primaryColor,
+      background: CustomColors.backgroundColor,
+      textContrastColor: Colors.black87,
+      textGrey: Colors.grey,
+      textLightGrey: CustomColors.textColorLightGrey,
+    ),
+  ],
+  navigationBarTheme: NavigationBarThemeData(
+    overlayColor: WidgetStatePropertyAll(Colors.transparent),
+    indicatorShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(CustomPadding.paddingLarge),
+    ),
+    height: kBottomNavigationBarHeight,
+    backgroundColor: Color(0xFFF5F5F5),
+    indicatorColor: Color(0xFF3AB54A),
+    labelTextStyle: WidgetStatePropertyAll(
+      TextStyle(
+        color: Colors.black87,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      ),
+    ),
+    iconTheme: WidgetStatePropertyAll(
+      IconThemeData(
+        color: Color(0xFF3AB54A),
+        size: 24.v,
+      ),
+    ),
+  ),
+  dividerTheme: DividerThemeData(
+    thickness: 0.7,
+    color: Color(0xFFD3D3D3),
+    endIndent: 40,
+    indent: 40,
+  ),
+  appBarTheme: AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xFFF5F5F5)),
+    backgroundColor: Color(0xFFF5F5F5),
+    foregroundColor: Colors.black87,
+    elevation: 0,
+    titleTextStyle: TextStyle(
+      color: Colors.black87,
+      fontSize: 18.fSize,
+      fontWeight: FontWeight.w500,
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: Colors.white,
+    filled: true,
+    hintStyle: TextStyle(
+      color: CustomColors.textColorGrey,
+      fontWeight: FontWeight.w500,
+    ),
+    contentPadding: EdgeInsets.symmetric(
+      horizontal: 20,
+      vertical: 16,
+    ),
+    border: OutlineInputBorder(
+      borderRadius:
+          BorderRadius.circular(CustomPadding.paddingXL), // Pill shape
+      borderSide: BorderSide.none, // No visible border
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(CustomPadding.paddingXL),
+      borderSide: BorderSide.none,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(CustomPadding.paddingXL),
+      borderSide: BorderSide.none,
+    ),
+  ),
+);

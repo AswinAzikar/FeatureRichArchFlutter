@@ -50,7 +50,7 @@ class CommonBottomSheet extends StatelessWidget {
                     borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(CustomPadding.paddingXL),
                     ),
-                    gradient: CustomColors.buttonGradient,
+                    gradient: CustomColors.newbuttonGradient,
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(

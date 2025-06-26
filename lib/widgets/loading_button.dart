@@ -1,5 +1,5 @@
-import '/constants/constants.dart';
-import '/services/size_utils.dart';
+import '/exporter/exporter.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,7 +16,7 @@ enum ButtonType {
     }
   }
 
-  LinearGradient get gradient => CustomColors.buttonGradient;
+  LinearGradient get gradient => CustomColors.fruitlyGradient;
 
   Color? get color {
     switch (this) {
@@ -110,11 +110,15 @@ class LoadingButton extends StatelessWidget {
                         if (icon != null) ...[icon!, SizedBox(width: 8.h)],
                         Text(
                           text,
-                          style:
-                              Theme.of(context).textTheme.labelLarge?.copyWith(
-                                    fontSize: 15.fSize,
-                                    color: effectiveTextColor,
-                                  ),
+                          style: context.labelLarge.copyWith(
+                              fontSize: 15.fSize,
+                              fontWeight: FontWeight.bold,
+                              color: effectiveTextColor),
+                          // Theme.of(context).labelLarge.copyWith(
+                          //       fontSize: 15.fSize,
+                          //       fontWeight: FontWeight.w800,
+                          //       color: effectiveTextColor,
+                          //     ),
                         ),
                       ],
                     ),
