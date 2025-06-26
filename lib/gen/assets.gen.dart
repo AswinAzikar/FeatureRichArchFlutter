@@ -18,6 +18,9 @@ class $AssetsLottiesGen {
   /// File path: assets/lotties/auth_lottie_2.json
   String get authLottie2 => 'assets/lotties/auth_lottie_2.json';
 
+  /// File path: assets/lotties/chill_guy_laugh.json
+  String get chillGuyLaugh => 'assets/lotties/chill_guy_laugh.json';
+
   /// File path: assets/lotties/girl_in_a_bike.json
   String get girlInABike => 'assets/lotties/girl_in_a_bike.json';
 
@@ -25,7 +28,13 @@ class $AssetsLottiesGen {
   String get notFound => 'assets/lotties/not_found.json';
 
   /// List of all assets
-  List<String> get values => [authLottie, authLottie2, girlInABike, notFound];
+  List<String> get values => [
+    authLottie,
+    authLottie2,
+    chillGuyLaugh,
+    girlInABike,
+    notFound,
+  ];
 }
 
 class $AssetsPngGen {
