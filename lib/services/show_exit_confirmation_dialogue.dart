@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 
-Future<bool> showExitConfirmationDialog(BuildContext context) async {
-  return await showDialog<bool>(
-        context: context,
-        builder: (context) => AlertDialog(
-          // title: const Text('Exit App?'),
-          content: const Text('Do you really want to quit?'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('No'),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: const Text('Yes'),
-            ),
+DateTime? _lastExitAttempt;
+
+Future<bool> showExitConfirmationToast(BuildContext context) async {
+  final now = DateTime.now();
+  const exitWarningDuration = Duration(seconds: 2);
+
+  if (_lastExitAttempt == null || now.difference(_lastExitAttempt!) > exitWarningDuration) {
+    _lastExitAttempt = now;
+
+    // Show a chip toast
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Icon(Icons.info, color: Colors.white),
+            SizedBox(width: 8),
+            Text("Tap once more to exit"),
           ],
         ),
-      ) ??
-      false;
+        duration: exitWarningDuration,
+      ),
+    );
+
+    return Future.value(false); // Do not exit the app
+  }
+
+  return Future.value(true); // Exit the app
 }

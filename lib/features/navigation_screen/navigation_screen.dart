@@ -1,4 +1,3 @@
-
 import '/features/search_screen.dart/view/search_screen.dart';
 
 import '../../extensions/app_theme_extensions.dart';
@@ -48,7 +47,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
       onPopInvokedWithResult: (didPop, result) async {
         if (!didPop) {
           final navigator = Navigator.of(context);
-          final confirm = await showExitConfirmationDialog(context);
+
+          final confirm = await showExitConfirmationToast(context);
+          // final confirm = await showExitConfirmationDialog(context);
           if (!mounted) return;
           if (confirm) {
             setState(() => _canPop = true);
