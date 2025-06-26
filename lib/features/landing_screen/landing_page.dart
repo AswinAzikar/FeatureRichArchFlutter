@@ -1,7 +1,7 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/features/authentication_screen/view/auth_page.dart';
-import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
-import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
+import '/constants/constants.dart';
+import '/features/authentication_screen/view/auth_page.dart';
+import '/gen/assets.gen.dart';
+import '/widgets/loading_button.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

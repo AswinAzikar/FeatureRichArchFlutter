@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+import '/exporter/exporter.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

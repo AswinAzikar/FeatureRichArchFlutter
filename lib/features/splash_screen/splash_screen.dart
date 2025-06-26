@@ -1,5 +1,5 @@
-import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
-import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_screen.dart';
+import '/features/landing_screen/landing_page.dart';
+import '/features/navigation_screen/navigation_screen.dart';
 
 import '../../services/shared_pref_services.dart';
 import '/exporter/exporter.dart';

@@ -1,7 +1,7 @@
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
-import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
-import 'package:FeatureRichArchFlutter/routes/app_routes.dart';
-import 'package:FeatureRichArchFlutter/themes/dark_theme.dart';
+import '/exporter/exporter.dart';
+import '/features/splash_screen/splash_screen.dart';
+import '/routes/app_routes.dart';
+import '/themes/dark_theme.dart';
 import '/core/api/dio_helper.dart';
 import '/services/shared_pref_services.dart';
 import 'package:flutter/material.dart';

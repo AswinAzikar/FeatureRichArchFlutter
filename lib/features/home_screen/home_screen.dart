@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/widgets/custom_dropdown_field.dart';
+import '/widgets/custom_dropdown_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';

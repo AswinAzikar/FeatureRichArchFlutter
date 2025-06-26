@@ -1,5 +1,5 @@
-import 'package:FeatureRichArchFlutter/features/paginated_home_screen/view/paginated_homescreen.dart';
-import 'package:FeatureRichArchFlutter/features/search_screen.dart/view/search_screen.dart';
+
+import '/features/search_screen.dart/view/search_screen.dart';
 
 import '../../extensions/app_theme_extensions.dart';
 import '/exporter/exporter.dart';

@@ -1,8 +1,8 @@
-import 'package:FeatureRichArchFlutter/core/logger.dart';
-import 'package:FeatureRichArchFlutter/features/authentication_screen/view/auth_page.dart';
-import 'package:FeatureRichArchFlutter/features/landing_screen/landing_page.dart';
-import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_screen.dart';
-import 'package:FeatureRichArchFlutter/features/splash_screen/splash_screen.dart';
+import '/core/logger.dart';
+import '/features/authentication_screen/view/auth_page.dart';
+import '/features/landing_screen/landing_page.dart';
+import '/features/navigation_screen/navigation_screen.dart';
+import '/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -43,12 +43,12 @@ class AppRoutes {
       // case AuthPage.path:
       //   return pageRoute(settings, const AuthPage());
 
-    //  case HomeScreen.path:
-    //     final key = settings.arguments as GlobalKey<ScaffoldState>?;
-    //     return pageRoute(
-    //       settings,
-    //       HomeScreen(scaffoldKey: key ?? GlobalKey<ScaffoldState>()),
-    //     );
+      //  case HomeScreen.path:
+      //     final key = settings.arguments as GlobalKey<ScaffoldState>?;
+      //     return pageRoute(
+      //       settings,
+      //       HomeScreen(scaffoldKey: key ?? GlobalKey<ScaffoldState>()),
+      //     );
       default:
         return null;
     }

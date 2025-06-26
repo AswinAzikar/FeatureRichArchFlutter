@@ -1,5 +1,5 @@
-import 'package:FeatureRichArchFlutter/core/api/base_url_constant.dart';
-import 'package:FeatureRichArchFlutter/core/api/dio_helper.dart';
+import '/core/api/base_url_constant.dart';
+import '/core/api/dio_helper.dart';
 
 class HomeService {
   static Future<Map<String, dynamic>?> getPost(int skip, int limit) async {
@@ -8,7 +8,7 @@ class HomeService {
         '/products',
         type: ApiType.product,
         queryParameters: {
-          'skip': skip, 
+          'skip': skip,
           'limit': limit,
         },
       );

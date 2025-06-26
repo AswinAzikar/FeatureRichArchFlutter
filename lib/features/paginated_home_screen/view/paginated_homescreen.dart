@@ -1,7 +1,7 @@
-import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
-import 'package:FeatureRichArchFlutter/extensions/app_theme_extensions.dart';
-import 'package:FeatureRichArchFlutter/features/paginated_home_screen/data/home_service.dart';
-import 'package:FeatureRichArchFlutter/main.dart';
+import '/exporter/exporter.dart';
+import '/extensions/app_theme_extensions.dart';
+import '/features/paginated_home_screen/data/home_service.dart';
+import '/main.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 

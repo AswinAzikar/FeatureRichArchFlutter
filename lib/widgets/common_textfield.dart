@@ -1,5 +1,5 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/extensions/app_theme_extensions.dart';
+import '/constants/constants.dart';
+import '/extensions/app_theme_extensions.dart';
 import 'package:flutter/material.dart';
 
 class CommonTextfield extends StatelessWidget {

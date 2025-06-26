@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/services/size_utils.dart';
+import '/services/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../extensions/app_theme_extensions.dart';

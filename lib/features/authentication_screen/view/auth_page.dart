@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
@@ -6,11 +5,11 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
 
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/features/navigation_screen/navigation_screen.dart';
-import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
-import 'package:FeatureRichArchFlutter/services/size_utils.dart';
-import 'package:FeatureRichArchFlutter/widgets/loading_button.dart';
+import '/constants/constants.dart';
+import '/features/navigation_screen/navigation_screen.dart';
+import '/gen/assets.gen.dart';
+import '/services/size_utils.dart';
+import '/widgets/loading_button.dart';
 
 import '../../../services/shared_pref_services.dart';
 import '../../../widgets/social_media_auth_button.dart';
