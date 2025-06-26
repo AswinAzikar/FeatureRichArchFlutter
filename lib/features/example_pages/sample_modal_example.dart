@@ -1,7 +1,11 @@
 import 'package:FeatureRichArchFlutter/exporter/exporter.dart';
+import 'package:FeatureRichArchFlutter/gen/assets.gen.dart';
 import 'package:FeatureRichArchFlutter/services/size_utils.dart';
 import 'package:FeatureRichArchFlutter/widgets/mini_loading_button.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+
+import '../../widgets/chill_guy_widget.dart';
 
 class SampleModalExample extends StatefulWidget {
   const SampleModalExample({super.key});
@@ -35,12 +39,18 @@ class _SampleModalExampleState extends State<SampleModalExample> {
                     return Padding(
                       padding: MediaQuery.of(context).viewInsets,
                       child: SizedBox(
-                        height: SizeUtils.height * .4,
+                        width: double.maxFinite,
+                        height: SizeUtils.height * .54,
                         child: Column(
                           children: [
-                            Center(
-                              child: Text('This is a sample modal bottom sheet'),
-                            ),
+                            CustomGap.gapLarge,
+
+                            ChillGuyWidget(),
+
+                            // Text(
+                            //   'This is a sample modal',
+                            //   style: Theme.of(context).textTheme.titleLarge,
+                            // ),
                           ],
                         ),
                       ),
