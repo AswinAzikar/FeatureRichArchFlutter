@@ -1,3 +1,5 @@
+import 'package:FeatureRichArchFlutter/features/profile_screen/profile_screen.dart';
+
 import '/features/search_screen.dart/view/search_screen.dart';
 
 import '../../extensions/app_theme_extensions.dart';
@@ -31,7 +33,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
         // const Center(child: Text('Search Page')),
         const Center(child: Text('Add Page')),
         const Center(child: Text('Notifications Page')),
-        const Center(child: Text('Profile Page')),
+        // const Center(child: Text('Profile Page')),
+        ProfileScreen()
       ];
 
   @override

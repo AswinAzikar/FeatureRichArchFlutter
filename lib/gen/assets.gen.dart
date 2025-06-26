@@ -21,8 +21,11 @@ class $AssetsLottiesGen {
   /// File path: assets/lotties/girl_in_a_bike.json
   String get girlInABike => 'assets/lotties/girl_in_a_bike.json';
 
+  /// File path: assets/lotties/not_found.json
+  String get notFound => 'assets/lotties/not_found.json';
+
   /// List of all assets
-  List<String> get values => [authLottie, authLottie2, girlInABike];
+  List<String> get values => [authLottie, authLottie2, girlInABike, notFound];
 }
 
 class $AssetsPngGen {
