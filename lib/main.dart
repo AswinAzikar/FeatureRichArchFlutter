@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart';
 
 import '/exporter/exporter.dart';
 import '/features/splash_screen/splash_screen.dart';
@@ -18,6 +17,13 @@ void main() async {
 
   await DioHelper().init();
   await SharedPreferencesService.i.initialize();
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   SystemUiOverlayStyle(
+  //     statusBarColor: Colors.transparent,
+  //     statusBarIconBrightness: Brightness.dark,
+  //     statusBarBrightness: Brightness.light,
+  //   ),
+  // );
 
   runApp(MyApp(key: appKey));
 }
@@ -52,6 +58,8 @@ class MyAppState extends State<MyApp> {
         theme: lightTheme,
         darkTheme: darkTheme,
         themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
+       
+
       ),
     );
   }
