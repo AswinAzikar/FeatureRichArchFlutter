@@ -1,6 +1,4 @@
-import '/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../widgets/not_found_widget.dart';
 
