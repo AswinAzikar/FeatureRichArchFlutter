@@ -13,7 +13,6 @@ class ChillGuyWidget extends StatefulWidget {
 class _ChillGuyWidgetState extends State<ChillGuyWidget>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  
 
   @override
   void initState() {
