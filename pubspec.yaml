@@ -68,6 +68,7 @@ dependencies:
   custom_rating_bar: ^3.0.0
   gaimon: ^1.4.1
   syncfusion_flutter_calendar: ^29.2.5
+  app_links: ^6.4.0
   
 
 dev_dependencies:
