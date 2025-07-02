@@ -21,7 +21,7 @@ widgets or components
 
 4. custom_tabbar_with_view.dart: Custom Tabbar and Tabview
 5. rating_star: A widget to display and handle star-based rating functionality.
-6. custom_grid_builder: A widget to build customizable grid layouts with dynamic data and styling options.
+6. AnimatedGridBuilder: A widget to build animated grids with smooth transitions and dynamic content updates.
 7. app_links package added and andriodmanifest updated with app_links
 
 
