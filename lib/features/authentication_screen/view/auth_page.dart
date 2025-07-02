@@ -5,6 +5,7 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
 
+import '../../../services/phone_number_hint.dart';
 import '/constants/constants.dart';
 import '/features/navigation_screen/navigation_screen.dart';
 import '/gen/assets.gen.dart';
@@ -27,6 +28,25 @@ class _AuthPageState extends State<AuthPage> {
   bool isOtpStage = false;
   String fullPhoneNumber = '';
   bool isPhoneValid = false;
+    final TextEditingController phoneController = TextEditingController();
+
+@override
+  void initState() {
+    fetchAndSetPhoneNumber();
+    // TODO: implement initState
+    super.initState();
+  }
+
+   Future<void> fetchAndSetPhoneNumber() async {
+    final number = await PhoneNumberHint.getPhoneNumber();
+    if (number != null && mounted) {
+      setState(() {
+        phoneController.text = number.replaceAll('+91', '').trim();
+        fullPhoneNumber = number.trim();
+        isPhoneValid = true;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,6 +143,7 @@ class _AuthPageState extends State<AuthPage> {
             color: CustomColors.textfieldphoneColors,
           ),
           child: IntlPhoneField(
+            controller: phoneController,
             onChanged: (phone) {
               fullPhoneNumber = phone.completeNumber;
 

@@ -1,3 +1,4 @@
+import 'package:FeatureRichArchFlutter/services/get_device_details.dart';
 
 import '/exporter/exporter.dart';
 import '/features/splash_screen/splash_screen.dart';
@@ -17,6 +18,8 @@ void main() async {
 
   await DioHelper().init();
   await SharedPreferencesService.i.initialize();
+  final deviceDetails = await DeviceInfoService.getDeviceDetails();
+  logInfo(deviceDetails);
   // SystemChrome.setSystemUIOverlayStyle(
   //   SystemUiOverlayStyle(
   //     statusBarColor: Colors.transparent,
@@ -58,8 +61,6 @@ class MyAppState extends State<MyApp> {
         theme: lightTheme,
         darkTheme: darkTheme,
         themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-       
-
       ),
     );
   }
