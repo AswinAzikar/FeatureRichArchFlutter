@@ -1,4 +1,5 @@
-import '/widgets/custom_dropdown_field.dart';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';
@@ -30,6 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: Icon(Icons.menu, color: appColors.dynamicIconColor),
           onPressed: widget.openDrawer,
         ),
+        systemOverlayStyle: Theme.of(context).brightness == Brightness.dark
+            ? SystemUiOverlayStyle.light
+            : SystemUiOverlayStyle.dark,
         actions: [
           IconButton(
             onPressed: () => MyApp.toggleTheme(),
@@ -44,6 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // IconButton(
+          //   onPressed: () => MyApp.toggleTheme(),
+          //   icon: Icon(Icons.brightness_6, color: appColors.dynamicIconColor),
+          // ),
           SvgPicture.asset(Assets.svg.rocket),
           const SizedBox(height: CustomPadding.paddingLarge),
           Text('Welcome to the Home Screen',
@@ -54,12 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: CustomPadding.paddingLarge),
           Text('This is a simple home screen for our app.',
               style: TextStyle(fontSize: 16, color: appColors.textGrey)),
-          CustomDropdownField(
-            label: '',
-            value: '',
-            items: [],
-            onChanged: (p0) {},
-          )
         ],
       ),
     );
