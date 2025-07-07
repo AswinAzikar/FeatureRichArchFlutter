@@ -31,9 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: Icon(Icons.menu, color: appColors.dynamicIconColor),
           onPressed: widget.openDrawer,
         ),
-        systemOverlayStyle: Theme.of(context).brightness == Brightness.dark
-            ? SystemUiOverlayStyle.light
-            : SystemUiOverlayStyle.dark,
+      
         actions: [
           IconButton(
             onPressed: () => MyApp.toggleTheme(),

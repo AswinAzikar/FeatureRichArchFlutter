@@ -40,8 +40,12 @@ final ThemeData darkTheme = lightTheme.copyWith(
   appBarTheme: lightTheme.appBarTheme.copyWith(
     color: CustomColors.kDarkAppBar,
     systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarBrightness: Brightness.dark, // Status bar icons will be dark
+      statusBarIconBrightness:
+          Brightness.light, // Status bar icons will be dark
+
       statusBarColor: CustomColors.kDarkAppBar,
-      statusBarIconBrightness: Brightness.light,
+      // statusBarIconBrightness: Brightness.light,
     ),
     // backgroundColor: CustomColors.kDarkScaffold,
     foregroundColor: Colors.white,

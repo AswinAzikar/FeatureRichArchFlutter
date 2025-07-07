@@ -28,6 +28,7 @@ class AppThemeColors extends ThemeExtension<AppThemeColors> {
     Color? dynamicIconColor,
   }) {
     return AppThemeColors(
+      
       dynamicIconColor: dynamicIconColor?? this.dynamicIconColor,
       primary: primary ?? this.primary,
       background: background ?? this.background,

@@ -50,7 +50,11 @@ final lightTheme = ThemeData(
     indent: 40,
   ),
   appBarTheme: AppBarTheme(
-    systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xFFF5F5F5)),
+    systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xFFF5F5F5)
+    
+    ,statusBarBrightness:   Brightness.light, // Status bar icons will be dark
+    statusBarIconBrightness: Brightness.dark, // Status bar icons will be dark
+    ),
     backgroundColor: Color(0xFFF5F5F5),
     foregroundColor: Colors.black87,
     elevation: 0,
