@@ -11,17 +11,10 @@ import 'themes/light_theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
-
-
-
-
-
 final GlobalKey<MyAppState> appKey = GlobalKey<MyAppState>();
 
 void main() async {
-
-
-  //Firebase reference willl go here 
+  //Firebase reference willl go here
 
   // the file is referenced in all the other main_flavors
   // so no need to reference the common stuffs there
@@ -57,6 +50,7 @@ class MyAppState extends State<MyApp> {
   bool _isDarkMode = false;
 
   void toggleTheme() {
+    logWarning('Toggling theme to ${_isDarkMode ? 'light' : 'dark'} mode');
     setState(() => _isDarkMode = !_isDarkMode);
   }
 
