@@ -11,9 +11,20 @@ import 'themes/light_theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
+
+
+
+
+
 final GlobalKey<MyAppState> appKey = GlobalKey<MyAppState>();
 
 void main() async {
+
+
+  //Firebase reference willl go here 
+
+  // the file is referenced in all the other main_flavors
+  // so no need to reference the common stuffs there
   WidgetsFlutterBinding.ensureInitialized();
 
   await DioHelper().init();

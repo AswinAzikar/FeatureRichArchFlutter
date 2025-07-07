@@ -7,8 +7,8 @@ import 'main.dart';
 void main() {
   FlavorConfig(
     flavor: Flavor.release,
-    // baseUrl: 'https://debug.example.com/base',
-    name: 'DEBUG',
+     baseUrl: 'https://debug.example.com/base',
+    name: 'RELEASE',
   );
 
   String api = BaseUrlConstant.getBaseUrl(ApiType.baseUrl);

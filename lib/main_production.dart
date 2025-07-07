@@ -8,7 +8,7 @@ void main() {
   FlavorConfig(
     flavor: Flavor.production,
     // baseUrl: 'https://debug.example.com/base',
-    name: 'DEBUG',
+    name: 'PRODUCTION',
   );
 
   String api = BaseUrlConstant.getBaseUrl(ApiType.baseUrl);
