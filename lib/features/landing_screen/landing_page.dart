@@ -1,3 +1,5 @@
+import '/services/size_utils.dart';
+
 import '/constants/constants.dart';
 import '/features/authentication_screen/view/auth_page.dart';
 import '/gen/assets.gen.dart';
@@ -22,7 +24,7 @@ class LandingPage extends StatelessWidget {
 
             Lottie.asset(
               Assets.lotties.girlInABike,
-              // width: 200,
+              width: SizeUtils.width,
               // height: 200,
               fit: BoxFit.fill,
             ),
