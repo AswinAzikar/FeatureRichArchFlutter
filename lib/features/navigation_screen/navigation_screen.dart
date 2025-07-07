@@ -1,5 +1,6 @@
 import '../alert_screen/alert_screen.dart';
 // import '../example_pages/carousel_example.dart';
+import '../example_pages/carousel_example.dart';
 import '/features/profile_screen/profile_screen.dart';
 
 import '../add_screen/view/add_screen.dart';
@@ -44,8 +45,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
         return AddScreen();
       case 3:
         // return const Center(child: Text('Notifications Page'));
-        return AlertScreen();
-      // return CarouselExample();
+        // return AlertScreen();
+      return CarouselExample();
       case 4:
         return const ProfileScreen();
       default:
