@@ -51,6 +51,7 @@ final lightTheme = ThemeData(
   ),
   appBarTheme: AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xFFF5F5F5)),
+    
     backgroundColor: Color(0xFFF5F5F5),
     foregroundColor: Colors.black87,
     elevation: 0,
