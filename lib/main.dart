@@ -1,3 +1,5 @@
+import 'package:FeatureRichArchFlutter/services/get_device_details.dart';
+
 import '/exporter/exporter.dart';
 import '/features/splash_screen/splash_screen.dart';
 import '/routes/app_routes.dart';
@@ -13,8 +15,18 @@ final GlobalKey<MyAppState> appKey = GlobalKey<MyAppState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await DioHelper().init();
   await SharedPreferencesService.i.initialize();
+  final deviceDetails = await DeviceInfoService.getDeviceDetails();
+  logInfo(deviceDetails);
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   SystemUiOverlayStyle(
+  //     statusBarColor: Colors.transparent,
+  //     statusBarIconBrightness: Brightness.dark,
+  //     statusBarBrightness: Brightness.light,
+  //   ),
+  // );
 
   runApp(MyApp(key: appKey));
 }

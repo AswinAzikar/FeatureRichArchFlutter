@@ -1,3 +1,8 @@
+import 'package:FeatureRichArchFlutter/features/animated_grid_screen/animated_grid_screen.dart';
+
+import '/features/profile_screen/profile_screen.dart';
+
+import '../add_screen/view/add_screen.dart';
 import '/features/search_screen.dart/view/search_screen.dart';
 
 import '../../extensions/app_theme_extensions.dart';
@@ -20,19 +25,47 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
   bool _canPop = false;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  late final List<Widget?> _pages = List.filled(5, null);
+  Widget _getPage(int index) {
+    if (_pages[index] == null) {
+      _pages[index] = _buildPage(index);
+    }
+    return _pages[index]!;
+  }
 
-  List<Widget> get _pages => [
-        // const Center(child: Text('Search Page')),
-        HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
-        // PaginatedHomescreen(
-        //     openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+  Widget _buildPage(int index) {
+    switch (index) {
+      case 0:
+        return HomeScreen(
+            openDrawer: () => _scaffoldKey.currentState?.openDrawer());
+      case 1:
+        return SearchScreen();
+      case 2:
+        return AddScreen();
+      case 3:
+        return const Center(child: Text('Notifications Page'));
+      case 4:
+        return const ProfileScreen();
+      default:
+        return const SizedBox.shrink();
+    }
+  }
 
-        SearchScreen(),
-        // const Center(child: Text('Search Page')),
-        const Center(child: Text('Add Page')),
-        const Center(child: Text('Notifications Page')),
-        const Center(child: Text('Profile Page')),
-      ];
+  // List<Widget> get _pages => [
+  //       // const Center(child: Text('Search Page')),
+  //       HomeScreen(openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+  //       // PaginatedHomescreen(
+  //       //     openDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+
+  //       SearchScreen(),
+  //       // const Center(child: Text('Search Page')),
+  //       AddScreen(),
+  //       // const Center(child: Text('Add Page')),
+  //       // const Center(child: Text('Notifications Page')),
+  //       AnimatedGridScreen(),
+  //       // const Center(child: Text('Profile Page')),
+  //       ProfileScreen()
+  //     ];
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +114,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
             onTap: () {
               FocusManager.instance.primaryFocus?.unfocus();
             },
-            child: IndexedStack(index: _selectedIndex, children: _pages)),
+            child: IndexedStack(
+                index: _selectedIndex,
+                children: List.generate(
+                  5,
+                  (index) => _getPage(index),
+                ))),
         bottomNavigationBar: Material(
           elevation: 40,
           shadowColor: Colors.black,

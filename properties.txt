@@ -16,8 +16,13 @@ widgets or components
 
 1. common_textfield: A reusable text field widget with customizable properties like hint text, validation, and styling.
 2.  custom_dropdown_field: A reusable dropdown field widget.
-3. 
 
+3. not_found_widget: Displays a user-friendly message or graphic when no data or results are found.
+
+4. custom_tabbar_with_view.dart: Custom Tabbar and Tabview
+5. rating_star: A widget to display and handle star-based rating functionality.
+6. AnimatedGridBuilder: A widget to build animated grids with smooth transitions and dynamic content updates.
+7. app_links package added and andriodmanifest updated with app_links
 
 
 mixins
