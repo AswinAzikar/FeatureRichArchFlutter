@@ -5,7 +5,6 @@ import 'flavors/flutter_flavors.dart';
 import 'main.dart';
 
 void main() {
-
   FlavorConfig.initialize(
     const FlavorConfig(
       // baseUrl: 'https://debug.example.com/shahil',
@@ -13,7 +12,6 @@ void main() {
       name: 'DEBUG',
     ),
   );
-
 
   String api = BaseUrlConstant.getBaseUrl(ApiType.baseUrl);
   logWarning('Calling API: $api');
