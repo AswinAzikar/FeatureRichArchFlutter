@@ -2,13 +2,13 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Debug - Debug Flavor",
+        "name": "Debug ",
         "request": "launch",
         "type": "dart",
         "program": "lib/main_debug.dart"
       },
       {
-        "name": "Debug - Production Flavor",
+        "name": "Production ",
         "request": "launch",
         "type": "dart",
         "program": "lib/main_production.dart"
@@ -17,13 +17,13 @@
 
 
       {
-        "name": "Debug - Testing Flavor",
+        "name": "Testing ",
         "request": "launch",
         "type": "dart",
         "program": "lib/main_testing.dart"
       },
       {
-        "name": "Debug - Release Flavor",
+        "name": "Release ",
         "request": "launch",
         "type": "dart",
         "program": "lib/main_release.dart"
