@@ -88,7 +88,6 @@ class _AnimatedGridItem extends StatefulWidget {
   final Duration duration;
 
   const _AnimatedGridItem({
-    super.key,
     required this.child,
     required this.delay,
     required this.duration,
