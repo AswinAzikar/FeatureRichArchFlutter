@@ -1,3 +1,4 @@
+import 'package:FeatureRichArchFlutter/core/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
@@ -122,12 +123,16 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  Future<void> saveToken() async {
-    await SharedPreferencesService.i.setValue(
-      key: 'token',
-      value: 'sampleValue',
-    );
-  }
+Future<void> saveToken() async {
+  await SharedPreferencesService.i.setValue(
+    key: 'token',
+    value: 'sampleValue',
+  );
+
+  final token = SharedPreferencesService.i.getValue(key: 'token');
+
+  logWarning('Token saved successfully $token');
+}
 
   Column buildPhoneNumberInput({Key? key}) {
     return Column(
