@@ -11,13 +11,25 @@ import 'themes/light_theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
+
+
+
+
+
 final GlobalKey<MyAppState> appKey = GlobalKey<MyAppState>();
 
 void main() async {
+
+
   WidgetsFlutterBinding.ensureInitialized();
+  logError("⚠️ Calling SharedPreferencesService.initialize()");
+  await SharedPreferencesService.i.initialize();
+  //Firebase reference willl go here 
+
+  // the file is referenced in all the other main_flavors
+  // so no need to reference the common stuffs there
 
   await DioHelper().init();
-  await SharedPreferencesService.i.initialize();
   final deviceDetails = await DeviceInfoService.getDeviceDetails();
   logInfo(deviceDetails);
   // SystemChrome.setSystemUIOverlayStyle(

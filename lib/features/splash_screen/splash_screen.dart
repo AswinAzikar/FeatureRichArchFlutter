@@ -33,8 +33,11 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        final token = SharedPreferencesService.i.token;
+        final token = SharedPreferencesService.i.getValue(key: 'token');
+        logError('Token from SharedPreferences: $token');
         if (token.isNotEmpty) {
+
+          // Navigate to the navigation screen if the token is present
           Navigator.of(context).pushReplacementNamed(NavigationScreen.path);
         } else {
           Navigator.of(context).pushReplacementNamed(LandingPage.path);
