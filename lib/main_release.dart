@@ -21,5 +21,5 @@ Future<void> main() async {
   String api = BaseUrlConstant.getBaseUrl(ApiType.baseUrl);
   logWarning('Calling API: $api');
 
-  runApp(MyApp());
+  runApp(MyApp(key: appKey,));
 }

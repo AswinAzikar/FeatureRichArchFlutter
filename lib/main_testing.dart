@@ -6,20 +6,16 @@ import 'flavors/flutter_flavors.dart';
 import 'main.dart';
 
 Future<void> main() async {
-
-  FlavorConfig.initialize(
-  FlavorConfig(
+  FlavorConfig.initialize(FlavorConfig(
     flavor: Flavor.testing,
     // baseUrl: 'https://debug.example.com/base',
     name: 'TESTING',
-  )
-  );
+  ));
   String api = BaseUrlConstant.getBaseUrl(ApiType.baseUrl);
   logWarning('Calling API: $api');
-
 
   WidgetsFlutterBinding.ensureInitialized();
   // logError("⚠️ Calling SharedPreferencesService.initialize()");
   await SharedPreferencesService.i.initialize();
-  runApp(MyApp());
+  runApp(MyApp(key: appKey));
 }
