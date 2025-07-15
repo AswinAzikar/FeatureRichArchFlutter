@@ -70,6 +70,7 @@ dependencies:
   syncfusion_flutter_calendar: ^29.2.5
   app_links: ^6.4.0
   device_info_plus: ^11.5.0
+  flutter_quill: ^11.4.1
   
 
 dev_dependencies:
