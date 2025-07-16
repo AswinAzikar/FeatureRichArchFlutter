@@ -1,5 +1,7 @@
-import 'package:FeatureRichArchFlutter/constants/constants.dart';
-import 'package:FeatureRichArchFlutter/widgets/carousel_view_widget.dart';
+import '/constants/constants.dart';
+import '/extensions/app_theme_extensions.dart';
+import '/extensions/font_extension.dart';
+import '/widgets/carousel_view_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/logger.dart';
@@ -9,9 +11,16 @@ class CarouselExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appColors = Theme.of(context).extension<AppThemeColors>()!;
+
     logError('CarouselExample build called');
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      appBar: AppBar(
+        title: Text(
+          'Carousel Screen',
+          style: TextStyle(color: appColors.textContrastColor),
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
