@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/features/example_pages/features_example.dart';
+import '/features/example_pages/features_example.dart';
 
 import '/core/logger.dart';
 import '/features/authentication_screen/view/auth_page.dart';

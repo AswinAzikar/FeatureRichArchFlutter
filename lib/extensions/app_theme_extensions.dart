@@ -28,17 +28,12 @@ class AppThemeColors extends ThemeExtension<AppThemeColors> {
     Color? dynamicIconColor,
   }) {
     return AppThemeColors(
-      dynamicIconColor: dynamicIconColor?? this.dynamicIconColor,
+      dynamicIconColor: dynamicIconColor ?? this.dynamicIconColor,
       primary: primary ?? this.primary,
       background: background ?? this.background,
       textContrastColor: textContrastColor ?? this.textContrastColor,
       textGrey: textGrey ?? this.textGrey,
       textLightGrey: textLightGrey ?? this.textLightGrey,
-
-
-
-
-
     );
   }
 
@@ -46,12 +41,12 @@ class AppThemeColors extends ThemeExtension<AppThemeColors> {
   AppThemeColors lerp(ThemeExtension<AppThemeColors>? other, double t) {
     if (other is! AppThemeColors) return this;
     return AppThemeColors(
-
-
-      dynamicIconColor: Color.lerp(dynamicIconColor, other.dynamicIconColor, t)!,
+      dynamicIconColor:
+          Color.lerp(dynamicIconColor, other.dynamicIconColor, t)!,
       primary: Color.lerp(primary, other.primary, t)!,
       background: Color.lerp(background, other.background, t)!,
-      textContrastColor: Color.lerp(textContrastColor, other.textContrastColor, t)!,
+      textContrastColor:
+          Color.lerp(textContrastColor, other.textContrastColor, t)!,
       textGrey: Color.lerp(textGrey, other.textGrey, t)!,
       textLightGrey: Color.lerp(textLightGrey, other.textLightGrey, t)!,
     );

@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/core/logger.dart';
+import '/core/logger.dart';
 
 import 'package:flutter/material.dart';
 

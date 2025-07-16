@@ -10,10 +10,9 @@ class NotFoundWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(child: Lottie.asset(Assets.lotties.notFound)),
-      ],
+    return Scaffold(
+      body:
+          Center(child: Expanded(child: Lottie.asset(Assets.lotties.notFound))),
     );
   }
 }

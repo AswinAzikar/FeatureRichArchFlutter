@@ -1,9 +1,10 @@
-import 'package:FeatureRichArchFlutter/core/logger.dart';
-import 'package:FeatureRichArchFlutter/extensions/app_theme_extensions.dart';
-import 'package:FeatureRichArchFlutter/main.dart';
-import 'package:FeatureRichArchFlutter/widgets/mini_loading_button.dart';
+import '/exporter/exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import '../../extensions/app_theme_extensions.dart';
+import '../../main.dart';
+import '../../widgets/mini_loading_button.dart';
 
 class LocaliationExample extends StatefulWidget {
   const LocaliationExample({super.key});
@@ -15,7 +16,6 @@ class LocaliationExample extends StatefulWidget {
 class _LocaliationExample extends State<LocaliationExample> {
   @override
   Widget build(BuildContext context) {
-    logError("⚠️ ProfileScreen build called");
     final appColors = Theme.of(context).extension<AppThemeColors>()!;
     return Scaffold(
       appBar: AppBar(
@@ -25,32 +25,55 @@ class _LocaliationExample extends State<LocaliationExample> {
           style: TextStyle(color: appColors.textContrastColor),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(localizationService.translate('hello')),
-          const Gap(20),
-          MiniLoadingButton(
-              text: 'Malayalam',
-              onPressed: () {
-                setState(() {
-                  MyApp.setLanguage('ml');
-                });
-
-                // setState(() {});
-              }),
-          const Gap(20),
-          MiniLoadingButton(
-              text: 'English',
-              onPressed: () {
-                setState(() {
-                  MyApp.setLanguage('en');
-                });
-
-                // setState(() {});
-              })
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            LocalizationTextWidget(
+              appColors: appColors.textContrastColor,
+            ),
+            const Gap(20),
+            MiniLoadingButton(
+                text: 'Malayalam',
+                onPressed: () {
+                  setState(() {
+                    MyApp.setLanguage('ml');
+                  });
+                }),
+            const Gap(20),
+            MiniLoadingButton(
+                text: 'English',
+                onPressed: () {
+                  setState(() {
+                    MyApp.setLanguage('en');
+                  });
+                })
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class LocalizationTextWidget extends StatefulWidget {
+  final Color appColors;
+
+  const LocalizationTextWidget({
+    super.key,
+    required this.appColors,
+  });
+
+  @override
+  State<LocalizationTextWidget> createState() => _LocalizationTextWidgetState();
+}
+
+class _LocalizationTextWidgetState extends State<LocalizationTextWidget> {
+  @override
+  Widget build(BuildContext context) {
+    logError("text Widget Rebuild.");
+    return Text(
+      localizationService.translate('hello'),
+      style: context.headlineMedium.copyWith(color: widget.appColors),
     );
   }
 }

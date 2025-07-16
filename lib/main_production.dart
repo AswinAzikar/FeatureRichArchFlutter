@@ -1,21 +1,16 @@
-import 'package:FeatureRichArchFlutter/core/logger.dart';
-import 'package:FeatureRichArchFlutter/services/shared_pref_services.dart';
+import '/core/logger.dart';
+import '/services/shared_pref_services.dart';
 import 'package:flutter/material.dart';
 import 'core/api/base_url_constant.dart';
 import 'flavors/flutter_flavors.dart';
 import 'main.dart';
 
 Future<void> main() async {
-
-
-  FlavorConfig.initialize(
-  FlavorConfig(
+  FlavorConfig.initialize(FlavorConfig(
     flavor: Flavor.production,
     // baseUrl: 'https://debug.example.com/base',
     name: 'PRODUCTION',
   ));
-
-
 
   WidgetsFlutterBinding.ensureInitialized();
   logError("⚠️ Calling SharedPreferencesService.initialize()");
