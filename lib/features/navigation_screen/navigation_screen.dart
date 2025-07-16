@@ -1,3 +1,6 @@
+import 'package:FeatureRichArchFlutter/features/example_pages/features_example.dart';
+import 'package:FeatureRichArchFlutter/features/example_pages/localiation_example.dart';
+
 import '../alert_screen/alert_screen.dart';
 // import '../example_pages/carousel_example.dart';
 import '../example_pages/carousel_example.dart';
@@ -46,7 +49,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       case 3:
         // return const Center(child: Text('Notifications Page'));
         // return AlertScreen();
-      return CarouselExample();
+        return CarouselExample();
       case 4:
         return const ProfileScreen();
       default:
@@ -108,6 +111,19 @@ class _NavigationScreenState extends State<NavigationScreen> {
               ),
               ListTile(title: Text('Home', style: drawerTextStyle)),
               ListTile(title: Text('Settings', style: drawerTextStyle)),
+              ListTile(
+                onTap: () {
+                  Navigator.popAndPushNamed(context, FeaturesExample.path);
+
+                  // Navigator.pop(context);
+                  // Navigator.restorablePushReplacementNamed(
+                  //     context, FeaturesExample.path);
+                },
+                title: Text(
+                  'Features',
+                  style: drawerTextStyle,
+                ),
+              )
             ],
           ),
         ),

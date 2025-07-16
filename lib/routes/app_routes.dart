@@ -1,3 +1,5 @@
+import 'package:FeatureRichArchFlutter/features/example_pages/features_example.dart';
+
 import '/core/logger.dart';
 import '/features/authentication_screen/view/auth_page.dart';
 import '/features/landing_screen/landing_page.dart';
@@ -34,6 +36,8 @@ class AppRoutes {
           child: AuthPage(),
           duration: const Duration(milliseconds: 400),
         );
+      case FeaturesExample.path:
+         return pageRoute(settings, FeaturesExample())  ;
       case NavigationScreen.path:
         return PageTransition(
             duration: const Duration(milliseconds: 800),

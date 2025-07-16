@@ -50,6 +50,7 @@ final lightTheme = ThemeData(
     indent: 40,
   ),
   appBarTheme: AppBarTheme(
+    surfaceTintColor: CustomColors.backgroundColor,
     systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xFFF5F5F5)),
     backgroundColor: Color(0xFFF5F5F5),
     foregroundColor: Colors.black87,
