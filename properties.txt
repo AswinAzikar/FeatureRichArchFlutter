@@ -1,47 +1,47 @@
 Pages or Screens
 ----------------
-1. api_listing_screen: Displays data fetched from APIs, such as coffee and post listings.
-2. authentication_screen: Handles user login, registration, and authentication flows.
-3. home_screen: Main dashboard or landing area after successful authentication.
-4. landing_screen: Initial welcome or introduction page for the app.
-5. navigation_screen: Manages navigation and routing between different screens.
-6. splash_screen: Shows a splash/loading screen when the app starts.
-7. search_screen:searching 
-8. paginated_home_screen: Displays a paginated list of items.
+* api_listing_screen: Displays data fetched from APIs, such as coffee and post listings.
+* authentication_screen: Handles user login, registration, and authentication flows.
+* home_screen: Main dashboard or landing area after successful authentication.
+* landing_screen: Initial welcome or introduction page for the app.
+* navigation_screen: Manages navigation and routing between different screens.
+* splash_screen: Shows a splash/loading screen when the app starts.
+* search_screen:searching 
+* paginated_home_screen: Displays a paginated list of items.
 
 
 
 widgets or components 
 ---------------------
 
-1. common_textfield: A reusable text field widget with customizable properties like hint text, validation, and styling.
-2.  custom_dropdown_field: A reusable dropdown field widget.
+* common_textfield: A reusable text field widget with customizable properties like hint text, validation, and styling.
+*  custom_dropdown_field: A reusable dropdown field widget.
 
-3. not_found_widget: Displays a user-friendly message or graphic when no data or results are found.
+* not_found_widget: Displays a user-friendly message or graphic when no data or results are found.
 
-4. custom_tabbar_with_view.dart: Custom Tabbar and Tabview
-5. rating_star: A widget to display and handle star-based rating functionality.
-6. AnimatedGridBuilder: A widget to build animated grids with smooth transitions and dynamic content updates.
-7. app_links package added and andriodmanifest updated with app_links
-8. carousel_view_widget: A widget to display a carousel of images or items with swipe functionality.
+* custom_tabbar_with_view.dart: Custom Tabbar and Tabview
+* rating_star: A widget to display and handle star-based rating functionality.
+* AnimatedGridBuilder: A widget to build animated grids with smooth transitions and dynamic content updates.
+* app_links package added and andriodmanifest updated with app_links
+* carousel_view_widget: A widget to display a carousel of images or items with swipe functionality.
 
 
 mixins
 -------
-1. date_selection_mixin: Provides utilities for selecting and handling dates.
-2. event_listener: Adds event listening capabilities to classes.
-3. force_update: Enables forced UI updates or state refreshes.
-4. form_validator_mixin: Supplies form validation logic and helpers.
-5. mobile_and_phone_mixin: Handles mobile number and phone-related logic.
-6. name_mixin: Manages name-related validation or formatting.
-7. search_mixin: Adds search/filtering functionality.
-8. state_mixin: Manages and tracks widget or app state.
-9. user_image_mixin: Handles user image selection, upload, or display.
+* date_selection_mixin: Provides utilities for selecting and handling dates.
+* event_listener: Adds event listening capabilities to classes.
+* force_update: Enables forced UI updates or state refreshes.
+* form_validator_mixin: Supplies form validation logic and helpers.
+* mobile_and_phone_mixin: Handles mobile number and phone-related logic.
+* name_mixin: Manages name-related validation or formatting.
+* search_mixin: Adds search/filtering functionality.
+* state_mixin: Manages and tracks widget or app state.
+* user_image_mixin: Handles user image selection, upload, or display.
 
 
 
 extensions
 ----------
 
-1. app_theme_extensions: Adds custom theme-related properties or methods to existing classes.
-2. font_extension: Provides additional font utilities or helpers for text styling.
+* app_theme_extensions: Adds custom theme-related properties or methods to existing classes.
+* font_extension: Provides additional font utilities or helpers for text styling.
