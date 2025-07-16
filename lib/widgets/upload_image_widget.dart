@@ -31,13 +31,15 @@ class UploadImageWidget extends StatelessWidget {
       onTap: onTap,
       borderRadius: borderradius,
       child: DottedBorder(
-        options: RectDottedBorderOptions(
+        borderType: BorderType.RRect,
+        
+        // options: RectDottedBorderOptions(
           dashPattern: const [10, 5],
           color: Colors.grey,
           // radius: const Radius.circular(CustomPadding.paddingXL),
           strokeCap: StrokeCap.butt,
           // borderType: BorderType.RRect,
-        ),
+        // ),
       
         child: AspectRatio(
           aspectRatio: aspectRatio,
