@@ -32,15 +32,15 @@ class UploadImageWidget extends StatelessWidget {
       borderRadius: borderradius,
       child: DottedBorder(
         borderType: BorderType.RRect,
-        
+
         // options: RectDottedBorderOptions(
-          dashPattern: const [10, 5],
-          color: Colors.grey,
-          // radius: const Radius.circular(CustomPadding.paddingXL),
-          strokeCap: StrokeCap.butt,
-          // borderType: BorderType.RRect,
+        dashPattern: const [10, 5],
+        color: Colors.grey,
+        // radius: const Radius.circular(CustomPadding.paddingXL),
+        strokeCap: StrokeCap.butt,
+        // borderType: BorderType.RRect,
         // ),
-      
+
         child: AspectRatio(
           aspectRatio: aspectRatio,
           child: Builder(
@@ -71,7 +71,7 @@ class UploadImageWidget extends StatelessWidget {
                               "${SharedPreferencesService.i.domainUrl}${networkImage!}",
                           fit: BoxFit.cover,
                         );
-                    },
+                      },
                     ),
                   ),
                   Center(
@@ -79,7 +79,7 @@ class UploadImageWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(CustomPadding.paddingXL),
                       decoration: BoxDecoration(
                         borderRadius: borderradius,
-                        color: Colors.black.withOpacity(.1),
+                        color: Colors.black.withValues(alpha: .1),
                       ),
                       child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
