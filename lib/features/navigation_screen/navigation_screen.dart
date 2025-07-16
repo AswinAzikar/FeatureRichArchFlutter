@@ -1,6 +1,3 @@
-
-
-import '../alert_screen/alert_screen.dart';
 // import '../example_pages/carousel_example.dart';
 import '../example_pages/carousel_example.dart';
 import '../example_pages/features_example.dart';
