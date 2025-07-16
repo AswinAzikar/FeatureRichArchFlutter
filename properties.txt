@@ -8,6 +8,7 @@ Pages or Screens
 * splash_screen: Shows a splash/loading screen when the app starts.
 * search_screen:searching 
 * paginated_home_screen: Displays a paginated list of items.
+* added Localization : localization_example.dart
 
 
 
@@ -24,6 +25,7 @@ widgets or components
 * AnimatedGridBuilder: A widget to build animated grids with smooth transitions and dynamic content updates.
 * app_links package added and andriodmanifest updated with app_links
 * carousel_view_widget: A widget to display a carousel of images or items with swipe functionality.
+* 
 
 
 mixins
