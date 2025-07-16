@@ -34,6 +34,7 @@ class _SampleModalExampleState extends State<SampleModalExample> {
                 text: "Tap to show modal ",
                 onPressed: () {
                   showModalBottomSheet(
+                    backgroundColor: appColors.secondaryColor,
                     context: context,
                     isScrollControlled: true,
                     shape: RoundedRectangleBorder(

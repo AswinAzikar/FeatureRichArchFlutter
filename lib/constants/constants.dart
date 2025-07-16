@@ -53,6 +53,7 @@ class CustomColors {
 
   static final kDarkDividerColor = Colors.grey[800];
   static final kDarkdynamicIconColor = Colors.white;
+  static final kSecondaryDark= Color.fromARGB(255, 46, 45, 46);
 
   // === Gradients ===
   static const LinearGradient fruitlyGradient = LinearGradient(
@@ -93,6 +94,8 @@ class CustomColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+
+  
 }
 
 

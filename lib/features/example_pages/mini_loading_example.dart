@@ -20,6 +20,12 @@ class _MiniLoadingExampleState extends State<MiniLoadingExample> {
   Widget build(BuildContext context) {
     final appColors = Theme.of(context).extension<AppThemeColors>()!;
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Buttons',
+          style: TextStyle(color: appColors.textContrastColor),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,6 +55,7 @@ class _MiniLoadingExampleState extends State<MiniLoadingExample> {
                 buttonType: ButtonType.outlined,
                 buttonLoading: isLoadingOutline,
                 text: 'Click here',
+                textColor: appColors.textContrastColor,
                 onPressed: () {
                   setState(() {
                     isLoadingOutline = !isLoadingOutline;
@@ -96,9 +103,13 @@ class WidgetCase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appColors = Theme.of(context).extension<AppThemeColors>()!;
     return Column(
       children: [
-        Text(label),
+        Text(
+          label,
+          style: TextStyle(color: appColors.textContrastColor),
+        ),
         CustomGap.gap,
         child,
         CustomGap.gapXL,

@@ -13,12 +13,20 @@ final lightTheme = ThemeData(
   useMaterial3: true,
   extensions: [
     AppThemeColors(
+
+secondaryColor: const Color.fromARGB(255, 221, 221, 220),
+
+
+
+      
       dynamicIconColor: Colors.black,
       primary: CustomColors.primaryColor,
       background: CustomColors.backgroundColor,
       textContrastColor: Colors.black87,
       textGrey: Colors.grey,
       textLightGrey: CustomColors.textColorLightGrey,
+
+      
     ),
   ],
   navigationBarTheme: NavigationBarThemeData(

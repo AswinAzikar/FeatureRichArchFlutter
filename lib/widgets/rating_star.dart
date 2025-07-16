@@ -1,3 +1,4 @@
+import '../extensions/app_theme_extensions.dart';
 import '/core/logger.dart';
 import 'package:custom_rating_bar/custom_rating_bar.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,14 @@ class RatingStar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appColors = Theme.of(context).extension<AppThemeColors>()!;
     // return RatingBar.readOnly(
     return Scaffold(
       appBar: AppBar(
-        title: Text('Star Rating'),
+        title: Text(
+          'Star Rating',
+          style: TextStyle(color: appColors.textContrastColor),
+        ),
       ),
       body: Center(
         child: Row(
