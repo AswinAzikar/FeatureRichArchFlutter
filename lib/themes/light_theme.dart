@@ -13,12 +13,20 @@ final lightTheme = ThemeData(
   useMaterial3: true,
   extensions: [
     AppThemeColors(
+
+secondaryColor: const Color.fromARGB(255, 221, 221, 220),
+
+
+
+      
       dynamicIconColor: Colors.black,
       primary: CustomColors.primaryColor,
       background: CustomColors.backgroundColor,
       textContrastColor: Colors.black87,
       textGrey: Colors.grey,
       textLightGrey: CustomColors.textColorLightGrey,
+
+      
     ),
   ],
   navigationBarTheme: NavigationBarThemeData(
@@ -50,6 +58,7 @@ final lightTheme = ThemeData(
     indent: 40,
   ),
   appBarTheme: AppBarTheme(
+    surfaceTintColor: CustomColors.backgroundColor,
     systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xFFF5F5F5)),
     
     backgroundColor: Color(0xFFF5F5F5),

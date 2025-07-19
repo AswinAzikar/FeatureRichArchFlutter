@@ -1,14 +1,20 @@
+import '/core/logger.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../extensions/app_theme_extensions.dart';
-import '../../widgets/not_found_widget.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
   Widget build(BuildContext context) {
+    logError("⚠️ ProfileScreen build called");
     final appColors = Theme.of(context).extension<AppThemeColors>()!;
     return Scaffold(
       appBar: AppBar(
@@ -20,9 +26,7 @@ class ProfileScreen extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // NotFoundWidget(),
-        ],
+        children: [],
       ),
     );
   }
