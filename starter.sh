@@ -25,6 +25,8 @@ cp -r FeatureRichArchFlutter/.vscode .
 
 #cp -r starter/assets .
 
+
+
 # Remove starter.sh from the project folder 
 rm -f starter.sh
 
@@ -34,6 +36,8 @@ rm -rf FeatureRichArchFlutter
 # Add Flutter packages
 flutter pub add dio dartz flutter_spinkit pinput google_sign_in country_code_picker firebase_auth firebase_core firebase_analytics flutter_svg animations jwt_decoder get hive path_provider flutter_animate firebase_messaging webview_flutter firebase_crashlytics gap lottie device_info_plus package_info_plus file_picker image_picker image_cropper url_launcher cloud_firestore intl geolocator geocoding dotted_border cached_network_image flutter_typeahead infinite_scroll_pagination fluttertoast dio_cookie_manager auto_size_text connectivity_plus flutter_local_notifications permission_handler google_maps_flutter screen_protector 
 
+
+flutter pub get
 
 sudo apt install sl
 sl -a
