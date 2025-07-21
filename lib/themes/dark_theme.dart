@@ -8,7 +8,8 @@ import '../constants/constants.dart';
 final ThemeData darkTheme = lightTheme.copyWith(
   extensions: [
     AppThemeColors(
-      dynamicIconColor: Colors.white,
+      secondaryColor: CustomColors.kSecondaryDark,
+      dynamicIconColor: Color(0xffE2E2E2),
       primary: CustomColors.primaryColor,
       background: CustomColors.kDarkScaffold,
       textContrastColor: CustomColors.textColorLight,
@@ -38,7 +39,9 @@ final ThemeData darkTheme = lightTheme.copyWith(
   dividerTheme:
       lightTheme.dividerTheme.copyWith(color: CustomColors.kDarkDividerColor),
   appBarTheme: lightTheme.appBarTheme.copyWith(
-    color: CustomColors.kDarkAppBar,
+    surfaceTintColor: CustomColors.kDarkDividerColor,
+    backgroundColor: CustomColors.kDarkScaffold,
+    // color: CustomColors.kDarkAppBar,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: CustomColors.kDarkAppBar,
       statusBarIconBrightness: Brightness.light,

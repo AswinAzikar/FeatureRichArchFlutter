@@ -24,14 +24,13 @@ class CustomDuration {
   static const Duration animationDurationLarge = Duration(seconds: 1);
 }
 
-
 class CustomColors {
   // === Light Theme Colors ===
   static const primaryColor = Color(0xFF3AB54A);
   static const secondaryColor = Color(0xFFFEE440);
   static const tertiaryColor = Color(0xFFF0F0F0);
 
-  static const backgroundColor = Color(0xFFF5F5F5);
+  static const backgroundColor = Color(0xFFf1F1F1);
   static const textColor = Color(0xFF000000);
   static const textColorLight = Color(0xFFFFFFFF);
   static const textColorDark = Color(0xFF000000);
@@ -43,7 +42,7 @@ class CustomColors {
   static const scaffoldRed = Colors.red;
 
   // === Dark Theme Colors ===
-  static const kDarkScaffold = Color(0xFF121212);
+  static const kDarkScaffold = Color(0xFF0D0D0D);
   static const kDarkAppBar = Color(0xFF1F1F1F);
   static const kDarkDrawer = Color(0xFF1E1E1E);
   static const kDarkBottomNav = Color(0xFF1A1A1A);
@@ -53,6 +52,7 @@ class CustomColors {
 
   static final kDarkDividerColor = Colors.grey[800];
   static final kDarkdynamicIconColor = Colors.white;
+  static final kSecondaryDark = Color(0xff303030);
 
   // === Gradients ===
   static const LinearGradient fruitlyGradient = LinearGradient(
@@ -94,7 +94,6 @@ class CustomColors {
     end: Alignment.bottomRight,
   );
 }
-
 
 const loremIpsum =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";

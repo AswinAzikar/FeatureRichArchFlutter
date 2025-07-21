@@ -1,4 +1,4 @@
-import 'package:FeatureRichArchFlutter/features/example_pages/sample_modal_example.dart';
+import '/features/example_pages/sample_modal_example.dart';
 
 import '/constants/constants.dart';
 
