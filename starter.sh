@@ -19,6 +19,10 @@ git clone https://github.com/AswinAzikar/FeatureRichArchFlutter.git
 
 # Copy files from the starter repository
 cp -r  FeatureRichArchFlutter/lib .
+
+#Copy config files of vscode
+cp -r FeatureRichArchFlutter/.vscode .
+
 #cp -r starter/assets .
 
 # Remove starter.sh from the project folder 
