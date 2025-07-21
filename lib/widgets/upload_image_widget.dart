@@ -31,11 +31,17 @@ class UploadImageWidget extends StatelessWidget {
       onTap: onTap,
       borderRadius: borderradius,
       child: DottedBorder(
-        dashPattern: const [10, 5],
-        color: Colors.grey,
-        radius: const Radius.circular(CustomPadding.paddingXL),
-        strokeCap: StrokeCap.butt,
-        borderType: BorderType.RRect,
+
+
+
+        options: RoundedRectDottedBorderOptions(
+          dashPattern: const [10, 5],
+          color: Colors.grey,
+          radius: const Radius.circular(CustomPadding.paddingXL),
+          strokeCap: StrokeCap.butt,
+        ),
+       
+        // borderType: BorderType.RRect,
         child: AspectRatio(
           aspectRatio: aspectRatio,
           child: Builder(
