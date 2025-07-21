@@ -63,7 +63,7 @@ dependencies:
 
 
 
-  # it was 5.0.0 when added 
+  # it was 5.0.0 when added and rolled back to ^4.0.0 due to breaking changes
   infinite_scroll_pagination: ^4.0.0
   custom_rating_bar: ^3.0.0
   gaimon: ^1.4.1
