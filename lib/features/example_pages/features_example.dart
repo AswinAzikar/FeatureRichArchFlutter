@@ -1,3 +1,9 @@
+import 'package:FeatureRichArchFlutter/features/example_pages/textfield_example.dart';
+import 'package:FeatureRichArchFlutter/features/home_screen/paginated_home_screen.dart';
+import 'package:FeatureRichArchFlutter/widgets/common_textfield.dart';
+import 'package:FeatureRichArchFlutter/widgets/upload_image_widget.dart';
+
+import '../paginated_home_screen/view/paginated_homescreen.dart';
 import '/exporter/exporter.dart';
 import '/extensions/app_theme_extensions.dart';
 import '/features/animated_grid_screen/animated_grid_screen.dart';
@@ -24,7 +30,8 @@ class FeaturesExample extends StatelessWidget {
     'Bottom Modal',
     'loading Buttons',
     'Not Found Screen',
-    'Star Rating'
+    'Star Rating',
+    'TextField',
   ];
 
   final List<Widget> screenRoutes = [
@@ -35,7 +42,9 @@ class FeaturesExample extends StatelessWidget {
     SampleModalExample(),
     MiniLoadingExample(),
     NotFoundWidget(),
-    RatingStar(maxRating: 5, initailRating: 2)
+    RatingStar(maxRating: 5, initailRating: 2),
+    TextfieldExample(),
+    
   ];
 
   @override
