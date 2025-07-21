@@ -21,7 +21,7 @@ class FeaturesExample extends StatelessWidget {
     'Tab bar screen',
     'Custom Carousal',
     'Grid View',
-    'Bottom Models',
+    'Bottom Modal',
     'loading Buttons',
     'Not Found Screen',
     'Star Rating'

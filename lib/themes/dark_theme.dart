@@ -9,7 +9,7 @@ final ThemeData darkTheme = lightTheme.copyWith(
   extensions: [
     AppThemeColors(
       secondaryColor: CustomColors.kSecondaryDark,
-      dynamicIconColor: Colors.white,
+      dynamicIconColor: Color(0xffE2E2E2),
       primary: CustomColors.primaryColor,
       background: CustomColors.kDarkScaffold,
       textContrastColor: CustomColors.textColorLight,
