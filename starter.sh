@@ -41,8 +41,10 @@ flutter pub get
 # Run flutter
 flutter
 
-# Install sl (steam locomotive animation)
-sudo apt install sl
+# Check if 'sl' is installed; if not, install it, else just run it
+if ! command -v sl &> /dev/null; then
+    sudo apt install -y sl
+fi
 sl -a
 
 
