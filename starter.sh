@@ -18,29 +18,54 @@ cd $project_name
 git clone https://github.com/AswinAzikar/FeatureRichArchFlutter.git
 
 # Copy files from the starter repository
-cp -r  FeatureRichArchFlutter/lib .
+cp -r FeatureRichArchFlutter/lib .
 
-#Copy config files of vscode
+# Copy config files of vscode
 cp -r FeatureRichArchFlutter/.vscode .
 
-#cp -r starter/assets .
+# Copy assets
+cp -r FeatureRichArchFlutter/assets .
 
-
-
-# Remove starter.sh from the project folder 
+# Remove starter.sh from the project folder
 rm -f starter.sh
 
 # Remove the starter repository
 rm -rf FeatureRichArchFlutter
 
 # Add Flutter packages
-flutter pub add dio dartz flutter_spinkit pinput google_sign_in country_code_picker firebase_auth firebase_core firebase_analytics flutter_svg animations jwt_decoder get hive path_provider flutter_animate firebase_messaging webview_flutter firebase_crashlytics gap lottie device_info_plus package_info_plus file_picker image_picker image_cropper url_launcher cloud_firestore intl geolocator geocoding dotted_border cached_network_image flutter_typeahead infinite_scroll_pagination fluttertoast dio_cookie_manager auto_size_text connectivity_plus flutter_local_notifications permission_handler google_maps_flutter screen_protector dotted_border flutter_localizations flutter_secure_storage flutter_inappwebview flutter_native_splash flutter_launcher_icons flutter_svg_provider flutter_html flutter_html_view flutter_staggered_grid_view flutter_slidable flutter_twitter_clone_ui animated_text_kit font_awesome_flutter cupertino_icons
+flutter pub add dio dartz flutter_spinkit pinput google_sign_in country_code_picker firebase_auth firebase_core firebase_analytics flutter_svg animations jwt_decoder get hive path_provider flutter_animate firebase_messaging webview_flutter firebase_crashlytics gap lottie device_info_plus package_info_plus file_picker image_picker image_cropper url_launcher cloud_firestore intl geolocator geocoding dotted_border cached_network_image flutter_typeahead infinite_scroll_pagination:4.0.0 fluttertoast dio_cookie_manager auto_size_text connectivity_plus permission_handler google_maps_flutter screen_protector dotted_border flutter_localization flutter_secure_storage flutter_inappwebview flutter_native_splash flutter_launcher_icons flutter_svg_provider flutter_staggered_grid_view flutter_slidable  animated_text_kit font_awesome_flutter cupertino_icons
 
-
-
+# Get dependencies
 flutter pub get
 
+# Run flutter
+flutter
+
+# Install sl (steam locomotive animation)
 sudo apt install sl
 sl -a
+
+
+# Append asset paths to pubspec.yaml if not already present
+echo "Updating pubspec.yaml with asset paths..."
+
+# Add the asset section if it's commented out or missing
+if grep -q "# assets:" pubspec.yaml; then
+  # Uncomment the assets section and append the paths
+  sed -i '/# assets:/s/# assets:/assets:/g' pubspec.yaml
+  sed -i '/assets:/a \
+    - assets/icons/\n\
+    - assets/png/\n\
+    - assets/svg/\n\
+    - assets/lotties/' pubspec.yaml
+else
+  # If the assets section is missing, append it at the end of the file
+  echo -e "\nflutter:\n  assets:\n    - assets/icons/\n    - assets/png/\n    - assets/svg/\n    - assets/lotties/" >> pubspec.yaml
+fi
+
+echo "pubspec.yaml updated successfully."
+
+
 # Open project in VS Code
 code .
+
