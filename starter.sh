@@ -1,4 +1,5 @@
-#!/bin/bash
+ 
+ #!/bin/bash
 set -e
 
 # Prompt for project name
@@ -48,3 +49,5 @@ sudo apt install sl
 sl -a
 # Open project in VS Code
 code .
+
+
