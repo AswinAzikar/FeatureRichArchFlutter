@@ -53,6 +53,9 @@ class _HomeScreenState extends State<HomeScreen> {
           //   icon: Icon(Icons.brightness_6, color: appColors.dynamicIconColor),
           // ),
           SvgPicture.asset(Assets.svg.rocket),
+
+          ////
+          ///
           const SizedBox(height: CustomPadding.paddingLarge),
           Text('Welcome to the Home Screen',
               style: TextStyle(
