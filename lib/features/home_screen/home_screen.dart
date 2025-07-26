@@ -11,6 +11,7 @@ import '/exporter/exporter.dart';
 
 class HomeScreen extends StatefulWidget {
   final VoidCallback openDrawer;
+
   static const String path = '/home-screen';
 
   const HomeScreen({super.key, required this.openDrawer});
@@ -48,14 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // IconButton(
-          //   onPressed: () => MyApp.toggleTheme(),
-          //   icon: Icon(Icons.brightness_6, color: appColors.dynamicIconColor),
-          // ),
           SvgPicture.asset(Assets.svg.rocket),
-
-          ////
-          ///
           const SizedBox(height: CustomPadding.paddingLarge),
           Text('Welcome to the Home Screen',
               style: TextStyle(

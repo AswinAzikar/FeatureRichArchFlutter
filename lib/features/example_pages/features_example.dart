@@ -12,6 +12,8 @@ import '/widgets/rating_star.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:flutter/widgets.dart';
+
 class FeaturesExample extends StatelessWidget {
   static const String path = '/features_example';
   FeaturesExample({super.key});
