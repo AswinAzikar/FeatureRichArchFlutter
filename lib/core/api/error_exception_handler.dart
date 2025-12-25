@@ -11,7 +11,7 @@ class CustomException implements Exception {
 }
 
 mixin ErrorExceptionHandler {
-  handleError(exception) {
+  dynamic handleError(exception) {
     switch (exception.runtimeType) {
       case const (DioException):
         final dioException = exception as DioException;
