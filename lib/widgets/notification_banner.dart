@@ -9,14 +9,14 @@ class NotificationBanner extends StatefulWidget {
   final VoidCallback? onTap;
 
   const NotificationBanner({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
     this.backgroundColor = Colors.orangeAccent,
     this.icon = Icons.info_outline,
     this.duration = const Duration(seconds: 5),
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   State<NotificationBanner> createState() => _NotificationBannerState();
@@ -38,8 +38,9 @@ class _NotificationBannerState extends State<NotificationBanner>
     _controller.forward();
 
     Future.delayed(widget.duration, () {
-      if (mounted)
+      if (mounted) {
         _controller.reverse().then((_) => mounted ? setState(() {}) : null);
+      }
     });
   }
 

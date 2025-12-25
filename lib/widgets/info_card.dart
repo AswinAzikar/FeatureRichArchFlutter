@@ -10,7 +10,7 @@ class InfoCard extends StatelessWidget {
   final double elevation;
 
   const InfoCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.icon,
@@ -18,7 +18,7 @@ class InfoCard extends StatelessWidget {
     this.backgroundColor = Colors.white,
     this.onTap,
     this.elevation = 2.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

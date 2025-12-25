@@ -10,7 +10,7 @@ class ProfileAvatarCard extends StatelessWidget {
   final Widget? trailing;
 
   const ProfileAvatarCard({
-    Key? key,
+    super.key,
     required this.name,
     required this.role,
     required this.imageUrl,
@@ -18,7 +18,7 @@ class ProfileAvatarCard extends StatelessWidget {
     this.onTap,
     this.avatarSize = 48.0,
     this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

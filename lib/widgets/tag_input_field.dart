@@ -8,13 +8,13 @@ class TagInputField extends StatefulWidget {
   final int? maxTags;
 
   const TagInputField({
-    Key? key,
+    super.key,
     this.initialTags = const [],
     required this.onChanged,
     this.hintText = 'Enter tag and press enter',
     this.allowDuplicates = false,
     this.maxTags,
-  }) : super(key: key);
+  });
 
   @override
   State<TagInputField> createState() => _TagInputFieldState();

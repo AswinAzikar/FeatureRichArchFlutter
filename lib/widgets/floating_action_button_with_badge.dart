@@ -7,12 +7,12 @@ class FloatingActionButtonWithBadge extends StatelessWidget {
   final Color badgeColor;
 
   const FloatingActionButtonWithBadge({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.icon,
     this.badgeCount = 0,
     this.badgeColor = Colors.red,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

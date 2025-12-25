@@ -26,7 +26,7 @@ class CustomDropdownField<T> extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(CustomPadding.paddingLarge),
       child: DropdownButtonFormField<T>(
-        value: value,
+        initialValue: value,
         isExpanded: isExpanded,
         decoration: InputDecoration(
           isDense: true,

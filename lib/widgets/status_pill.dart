@@ -9,12 +9,12 @@ class StatusPill extends StatelessWidget {
   final TextStyle? textStyle;
 
   const StatusPill({
-    Key? key,
+    super.key,
     required this.label,
     this.type = StatusType.info,
     this.customColor,
     this.textStyle,
-  }) : super(key: key);
+  });
 
   Color _getColor(BuildContext context) {
     switch (type) {

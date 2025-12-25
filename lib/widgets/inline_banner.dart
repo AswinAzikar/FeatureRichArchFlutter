@@ -11,14 +11,14 @@ class InlineBanner extends StatelessWidget {
   final BannerType type;
 
   const InlineBanner({
-    Key? key,
+    super.key,
     required this.message,
     this.onActionPressed,
     this.actionLabel,
     this.dismissible = false,
     this.onDismissed,
     this.type = BannerType.info,
-  }) : super(key: key);
+  });
 
   Color _getBackgroundColor(BuildContext context) {
     switch (type) {

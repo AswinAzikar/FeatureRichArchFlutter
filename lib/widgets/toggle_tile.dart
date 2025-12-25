@@ -11,7 +11,7 @@ class ToggleTile extends StatefulWidget {
   final bool enabled;
 
   const ToggleTile({
-    Key? key,
+    super.key,
     required this.title,
     required this.initialValue,
     required this.onChanged,
@@ -20,7 +20,7 @@ class ToggleTile extends StatefulWidget {
     this.activeColor,
     this.tileColor,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   @override
   State<ToggleTile> createState() => _ToggleTileState();
@@ -54,7 +54,7 @@ class _ToggleTileState extends State<ToggleTile> {
       trailing: Switch(
         value: _currentValue,
         onChanged: widget.enabled ? (val) => _toggle() : null,
-        activeColor: widget.activeColor,
+        activeThumbColor: widget.activeColor,
       ),
       onTap: _toggle,
     );
